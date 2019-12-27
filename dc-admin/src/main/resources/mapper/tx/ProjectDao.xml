@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.czttn.modules.tx.dao.ProjectDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="top.czttn.modules.tx.entity.ProjectEntity" id="projectMap">
+        <result property="id" column="id"/>
+        <result property="typeId" column="type_id"/>
+        <result property="name" column="name"/>
+        <result property="workType" column="work_type"/>
+        <result property="unit" column="unit"/>
+        <result property="totalPrice" column="total_price"/>
+        <result property="superCode" column="super_code"/>
+        <result property="totalCost" column="total_cost"/>
+        <result property="humanCost" column="human_cost"/>
+        <result property="helpCost" column="help_cost"/>
+        <result property="ifOn" column="if_on"/>
+        <result property="ifEditble" column="if_editble"/>
+    </resultMap>
+
+
+</mapper>

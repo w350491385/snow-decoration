@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.czttn.modules.tx.dao.PredictProjectDao">
+    <delete id="deleteByRoomIds">
+        delete
+        from tx_predict_project
+        where room_id in (${roomIds})
+    </delete>
+
+    <select id="findIdByRoom" resultType="java.lang.Long">
+        select t1.project_id
+        from tx_predict_project t1
+        where room_id = #{roomId}
+        <if test="cpId!=null and cpId!=''">
+            and t1.cp_id = #{cpId}
+        </if>
+    </select>
+    <select id="findList" resultType="top.czttn.modules.tx.entity.PredictProjectEntity">
+        select
+        t1.*,
+        t2.total_price
+        from tx_predict_project t1
+        inner join tx_project t2 on t1.project_id = t2.id
+        where t1.cp_id = #{cpId}
+        <if test="params!=null">
+            <if test="params.roomId!=null and params.roomId!=''">
+                and t1.room_id = #{params.roomId}
+            </if>
+        </if>
+    </select>
+    <select id="ifExit" resultType="top.czttn.modules.tx.entity.PredictProjectEntity">
+        select *
+        from tx_predict_project
+        where room_id = #{roomId}
+        limit 0,1
+    </select>
+    <select id="findByRoomIds" resultType="top.czttn.modules.tx.entity.PredictProjectEntity">
+        select t1.*,
+               t2.total_price,
+               t2.remark,
+               format(t1.amount * t2.total_price, 2) salePrice
+        from tx_predict_project t1
+                 inner join tx_project t2 on t1.project_id = t2.id
+        where t1.room_id in (${roomIds})
+    </select>
+
+
+</mapper>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.czttn.modules.tx.dao.ClientInfoDao">
+
+    <select id="findPageList" resultType="top.czttn.modules.tx.entity.ClientInfoEntity">
+        select t1.*,
+        t2.client_name
+        from tx_client_info t1
+        inner join tx_client t2 on t1.client_id = t2.id
+        where 1=1
+        <if test="cpId!=null and cpId!=''">
+            and t1.cp_id = #{cpId}
+        </if>
+        <if test="userId!=null and userId!=''">
+            and t2.belong_id = #{userId}
+        </if>
+        <if test="params!=null">
+            <if test="params.clientName!=null and params.clientName!=''">
+                and t2.client_name like concat('%',#{params.clientName},'%')
+            </if>
+        </if>
+        limit #{params.start}, #{params.end};
+    </select>
+    <select id="findPageTotal" resultType="java.lang.Integer">
+        select count(1)
+        from tx_client_info t1
+        inner join tx_client t2 on t1.client_id = t2.id
+        <if test="cpId!=null and cpId!=''">
+            and t1.cp_id = #{cpId}
+        </if>
+        <if test="userId!=null and userId!=''">
+            and t2.belong_id = #{userId}
+        </if>
+        <if test="params!=null">
+            <if test="params.clientName!=null and params.clientName!=''">
+                and t2.client_name like concat('%',#{params.clientName},'%')
+            </if>
+        </if>
+    </select>
+
+
+</mapper>

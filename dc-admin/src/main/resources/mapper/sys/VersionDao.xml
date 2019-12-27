@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.czttn.modules.sys.dao.VersionDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="top.czttn.modules.sys.entity.VersionEntity" id="versionMap">
+        <result property="id" column="id"/>
+        <result property="version" column="version"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="description" column="description"/>
+        <result property="win32Href" column="win32_href"/>
+        <result property="win64Href" column="win64_href"/>
+        <result property="macHref" column="mac_href"/>
+    </resultMap>
+
+
+</mapper>

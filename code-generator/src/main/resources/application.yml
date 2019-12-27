@@ -1,0 +1,23 @@
+server:
+  port: 8888
+
+# mysql
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://120.55.158.221:3306/decoration?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/ttn-decoration?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+#    password: Dajianjian74
+    password: root
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  resources:
+    static-locations: classpath:/static/,classpath:/views/
+
+# Mybatis配置
+mybatis:
+  mapperLocations: classpath:mapper/**/*.xml
+

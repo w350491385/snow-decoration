@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.czttn.modules.sys.dao.DeptDao">
+
+    <select id="findAll" resultType="top.czttn.modules.sys.entity.DeptEntity">
+        select t1.*,t2.name parentName
+        from sys_dept t1
+        left join sys_dept t2 on t1.parent_id = t2.id
+        where 1=1
+        <if test="cpId!=null and cpId!=''">
+            and t1.cp_id = #{cpId}
+        </if>
+        <if test="params!=null">
+            <if test="params.name!=null and params.name!=''">
+                and t1.name like concat('%',#{params.name},'%')
+            </if>
+            <if test="params.cpId!=null and params.cpId!=''">
+                and t1.cp_id = #{params.cpId}
+            </if>
+        </if>
+    </select>
+    <select id="selectByParentId" resultType="top.czttn.modules.sys.entity.DeptEntity">
+        select *
+        from sys_dept
+        where parent_id = #{id}
+        limit 1
+    </select>
+
+
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.czttn.modules.tx.dao.SysPositionDao">
+
+    <select id="findNameByUser" resultType="java.lang.String">
+        select t1.name
+        from sys_position t1
+                 inner join sys_user_position t2 on t1.id = t2.position_id
+        where t2.user_id = #{userId}
+    </select>
+    <select id="findCommonList" resultType="top.czttn.modules.tx.entity.SysPositionEntity">
+        select *
+        from sys_position
+        where if_common = 1
+    </select>
+
+
+</mapper>

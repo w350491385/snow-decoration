@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.czttn.modules.tx.dao.ClientPreDao">
+
+
+    <select id="findPageList" resultType="top.czttn.modules.tx.entity.ClientPreEntity">
+        select t1.*
+        from tx_client_pre t1
+        where 1=1
+        <if test="cpId!=null and cpId!=''">
+            and t1.cp_id = #{cpId}
+        </if>
+        <if test="userId!=null and userId!=''">
+            and t1.belong_id = #{userId}
+        </if>
+        <if test="params!=null">
+            <if test="params.clientName!=null and params.clientName!=''">
+                and t1.client_name = #{params.clientName}
+            </if>
+            <if test="params.clientId!=null and params.clientId!=''">
+                and t1.client_id = #{params.clientId}
+            </if>
+        </if>
+        limit #{params.start}, #{params.end}
+    </select>
+    <select id="findPageTotal" resultType="java.lang.Integer">
+        select count(1)
+        from tx_client_pre t1
+        where 1=1
+        <if test="cpId!=null and cpId!=''">
+            and t1.cp_id = #{cpId}
+        </if>
+        <if test="userId!=null and userId!=''">
+            and t1.belong_id = #{userId}
+        </if>
+        <if test="params!=null">
+            <if test="params.clientName!=null and params.clientName!=''">
+                and t1.client_name = #{params.clientName}
+            </if>
+            <if test="params.clientId!=null and params.clientId!=''">
+                and t1.client_id = #{params.clientId}
+            </if>
+        </if>
+    </select>
+</mapper>

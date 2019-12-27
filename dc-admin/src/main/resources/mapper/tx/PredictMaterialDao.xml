@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.czttn.modules.tx.dao.PredictMaterialDao">
+    <delete id="deleteByRoomIds">
+        delete
+        from tx_predict_material
+        where room_id in (${roomIds})
+    </delete>
+
+
+    <select id="findList" resultType="top.czttn.modules.tx.entity.PredictMaterialEntity">
+        select t1.*,
+               t2.name        materialName,
+               t2.unit,
+               t2.price_salse totalPrice
+        from tx_predict_material t1
+                 inner join tx_material t2
+                            on t1.material_id = t2.id
+        where t1.cp_id = #{cpId}
+          and t1.room_id = #{params.roomId}
+    </select>
+    <select id="findByRoom" resultType="java.lang.Long">
+        select t1.material_id
+        from tx_predict_material t1
+        where t1.room_id = #{roomId}
+          and t1.cp_id = #{cpId}
+    </select>
+    <select id="findByRoomIds" resultType="top.czttn.modules.tx.entity.PredictMaterialEntity">
+        select t1.*,
+               t2.name                               materialName,
+               t2.unit,
+               t2.price_salse                        totalPrice,
+               t3.name                               brandName,
+               t2.model,
+               format(t1.amount * t2.price_salse, 2) salePrice
+        from tx_predict_material t1
+                 inner join tx_material t2 on t1.material_id = t2.id
+                 left join tx_brand t3 on t3.id = t2.brand
+        where t1.room_id in (${roomIds})
+    </select>
+
+
+</mapper>

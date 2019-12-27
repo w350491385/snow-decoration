@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.czttn.modules.tx.dao.ServingTechDao">
+
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="top.czttn.modules.tx.entity.ServingTechEntity" id="servingTechMap">
+        <result property="id" column="id"/>
+        <result property="typeName" column="type_name"/>
+        <result property="content" column="content"/>
+        <result property="name" column="name"/>
+    </resultMap>
+    <select id="findCommon" resultType="top.czttn.modules.tx.entity.ServingTechEntity">
+        select *
+        from tx_serving_tech
+        where cp_id is null
+    </select>
+
+
+</mapper>

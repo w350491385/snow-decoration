@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.czttn.modules.sys.dao.SysUserDao">
+    <update id="updateLastLoginTime">
+        update sys_user
+        set last_login_time = now()
+        where user_id = #{userId}
+    </update>
+    <!-- 查询用户的所有权限 -->
+    <select id="queryAllPerms" resultType="string">
+        select m.perms
+        from sys_user_role ur
+                 LEFT JOIN sys_role_menu rm on ur.role_id = rm.role_id
+                 LEFT JOIN sys_menu m on rm.menu_id = m.menu_id
+        where ur.user_id = #{userId}
+    </select>
+
+    <!-- 查询用户的所有菜单ID -->
+    <select id="queryAllMenuId" resultType="long">
+        select distinct rm.menu_id
+        from sys_user_role ur
+                 LEFT JOIN sys_role_menu rm on ur.role_id = rm.role_id
+        where ur.user_id = #{userId}
+    </select>
+
+    <select id="queryByMobile" resultType="top.czttn.modules.sys.entity.SysUserEntity">
+        select *
+        from sys_user
+        where mobile = #{mobile}
+    </select>
+    <select id="findAll" resultType="top.czttn.modules.sys.entity.SysUserEntity">
+        select t1.*,t2.name deptName from sys_user t1
+        inner join sys_dept t2 on t1.dept_id = t2.id
+        where 1=1
+        <if test="cpId!=null and cpId!=''">
+            and t1.cp_id = #{cpId}
+        </if>
+    </select>
+    <select id="selectByDept" resultType="top.czttn.modules.sys.entity.SysUserEntity">
+        select *
+        from sys_user
+        where dept_id = #{id}
+        limit 1
+    </select>
+    <select id="findByDeptIds" resultType="java.lang.Long">
+        select t1.user_id
+        from sys_user t1
+        where t1.dept_id in (${deptviewIds})
+    </select>
+    <select id="queryUser" resultType="top.czttn.modules.sys.entity.SysUserEntity">
+        select *
+        from sys_user
+        where mobile = #{username}
+           or email = #{username}
+    </select>
+    <select id="queryByEmail" resultType="top.czttn.modules.sys.entity.SysUserEntity">
+        select *
+        from sys_user
+        where email = #{email}
+    </select>
+</mapper>

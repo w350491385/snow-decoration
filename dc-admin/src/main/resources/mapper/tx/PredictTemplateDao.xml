@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.czttn.modules.tx.dao.PredictTemplateDao">
+
+
+    <select id="findPageList" resultType="top.czttn.modules.tx.entity.PredictTemplateEntity">
+        select
+        t1.*,
+        group_concat(distinct t2.name) rooms,
+        t4.name templateTypeName,
+        (IFNULL(SUM(t7.total_price * t6.amount),0) + IFNULL(SUM(t9.price_salse * t8.amount),0)) AS salePrice,
+        (IFNULL(SUM(t7.total_cost * t6.amount),0) + IFNULL(SUM(t9.price_purchase * t8.amount),0)) AS totalCost,
+        t5.client_name clientName
+        from tx_predict_template t1
+        left join tx_predict_room t2 on t1.id = t2.template_id
+        left join sys_dict t4 on t4.id = t1.template_type and t4.type_id = 1027
+        left join tx_client t5 on t1.client_id = t5.id
+        left join tx_predict_project t6 on t6.room_id = t2.id
+        left join tx_project t7 on t7.id = t6.project_id
+        left join tx_predict_material t8 on t8.room_id = t2.id
+        left join tx_material t9 on t9.id = t8.material_id
+        where 1=1
+        <if test="cpId!=null and cpId!=''">
+            and t1.cp_id = #{cpId}
+        </if>
+        <if test="params!=null">
+            <if test="params.name!=null and params.name!=''">
+                and t1.name like concat('%',#{params.name},'%')
+            </if>
+        </if>
+        group by t1.id
+        order by t1.create_time desc
+        limit #{params.start},#{params.end}
+    </select>
+    <select id="findPageTotal" resultType="java.lang.Integer">
+        select
+        count(1)
+        from tx_predict_template t1
+        where 1=1
+        <if test="cpId!=null and cpId!=''">
+            and t1.cp_id = #{cpId}
+        </if>
+        <if test="params!=null">
+            <if test="params.name!=null and params.name!=''">
+                and t1.name like concat('%',#{params.name},'%')
+            </if>
+        </if>
+    </select>
+    <select id="findById" resultType="top.czttn.modules.tx.entity.PredictTemplateEntity">
+        select t1.*,
+               t2.cp_name,
+               t3.address          proAddress,
+               t2.address          cpAddress,
+               t2.phone,
+               group_concat(t4.id) roomIds
+        from tx_predict_template t1
+                 inner join sys_company t2 on t1.cp_id = t2.cp_id
+                 left join tx_client t3 on t1.client_id = t3.id
+                 left join tx_predict_room t4 on t4.template_id = t1.id
+        where t1.id = #{id}
+        group by t1.id
+    </select>
+
+</mapper>

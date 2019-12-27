@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.czttn.modules.sys.dao.CompanyRegistDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="top.czttn.modules.sys.entity.CompanyRegistEntity" id="companyRegistMap">
+        <result property="id" column="id"/>
+        <result property="cpName" column="cp_name"/>
+        <result property="phone" column="phone"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+    </resultMap>
+
+
+</mapper>

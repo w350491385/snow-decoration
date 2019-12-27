@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.czttn.modules.tx.dao.ClientDao">
+
+
+    <update id="updateEscape">
+        update tx_client
+        set escape = #{clientEntity.escape}
+        where id = #{clientEntity.id}
+    </update>
+    <update id="receive">
+        update tx_client
+        set belong_id     = #{userId},
+            receive_count = receive_count + 1,
+            receive_time  = now(),
+            escape        = null
+        where id in (${ids})
+    </update>
+    <update id="sea">
+        update tx_client
+        set belong_id = null
+        where id in (${ids})
+    </update>
+    <update id="moveToPubByUserId">
+        update tx_client
+        set belong_id = null
+        where belong_id = #{userId}
+    </update>
+    <update id="exchange">
+        update tx_client
+        set belong_id = #{targetUser}
+        where id in (${ids})
+    </update>
+    <select id="findByUser" resultType="top.czttn.modules.tx.entity.ClientEntity">
+        select *
+        from tx_client
+        where belong_id = #{id}
+    </select>
+</mapper>

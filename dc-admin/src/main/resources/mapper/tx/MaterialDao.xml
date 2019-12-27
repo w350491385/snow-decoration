@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.czttn.modules.tx.dao.MaterialDao">
+
+    <select id="findPageList" resultType="top.czttn.modules.tx.entity.MaterialEntity">
+        select
+        t1.*,
+        t2.type_name typeName,
+        t3.name brandName,
+        t4.name roomAreaName
+        from
+        tx_material t1
+        inner join tx_material_type t2 on t1.type_id = t2.id
+        left join tx_brand t3 on t3.id = t1.brand
+        left join sys_dict t4 on t4.id = t1.room_area and t4.type_id = 1002
+        where 1=1
+        <if test="cpId!=null and cpId!=''">
+            and t1.cp_id = #{cpId}
+        </if>
+        <if test="params!=null">
+            <if test="params.name!=null and params.name!=''">
+                and t1.name like concat('%',#{params.name},'%')
+            </if>
+            <if test="params.typeId!=null and params.typeId!=''">
+                and t1.type_id = #{params.typeId}
+            </if>
+            <if test="params.filterId!=null and params.filterId!=''">
+                and t1.id not in (${params.filterId})
+            </if>
+        </if>
+        limit #{params.start},#{params.end}
+    </select>
+    <select id="findPageCount" resultType="java.lang.Integer">
+        select
+        count(1)
+        from
+        tx_material t1
+        inner join tx_material_type t2 on t1.type_id = t2.id
+        left join tx_brand t3 on t3.id = t1.brand
+        left join sys_dict t4 on t4.id = t1.room_area and t4.type_id = 1002
+        where 1=1
+        <if test="cpId!=null and cpId!=''">
+            and t1.cp_id = #{cpId}
+        </if>
+        <if test="params!=null">
+            <if test="params.name!=null and params.name!=''">
+                and t1.name like concat('%',#{params.name},'%')
+            </if>
+            <if test="params.typeId!=null and params.typeId!=''">
+                and t1.type_id = #{params.typeId}
+            </if>
+            <if test="params.filterId!=null and params.filterId!=''">
+                and t1.id not in (${params.filterId})
+            </if>
+        </if>
+    </select>
+
+
+</mapper>

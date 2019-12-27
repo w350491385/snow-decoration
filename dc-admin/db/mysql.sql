@@ -19,20 +19,20 @@ USE `ttn-decoration`;
 /*Table structure for table `ct_article` */
 
 CREATE TABLE `ct_article` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `create_man` bigint(20) DEFAULT NULL COMMENT '创建人',
-  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-  `update_man` bigint(20) DEFAULT NULL COMMENT '更新人',
-  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
-  `title` varchar(128) DEFAULT NULL COMMENT '标题',
-  `read_count` int(11) NOT NULL DEFAULT '0' COMMENT '阅读数',
-  `like_count` int(11) NOT NULL DEFAULT '0' COMMENT '点赞数',
-  `conten` text COMMENT '文章内容',
-  `reward_tile` varchar(128) DEFAULT NULL COMMENT '打赏标题',
-  `reward_pic_url` varchar(128) DEFAULT NULL COMMENT '打赏图片URL',
-  `if_publish` int(11) NOT NULL DEFAULT '0' COMMENT '是否发布',
-  `type` varchar(32) DEFAULT NULL COMMENT '文章类型 字典',
-  PRIMARY KEY (`id`)
+                              `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                              `create_man` bigint(20) DEFAULT NULL COMMENT '创建人',
+                              `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+                              `update_man` bigint(20) DEFAULT NULL COMMENT '更新人',
+                              `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+                              `title` varchar(128) DEFAULT NULL COMMENT '标题',
+                              `read_count` int(11) NOT NULL DEFAULT '0' COMMENT '阅读数',
+                              `like_count` int(11) NOT NULL DEFAULT '0' COMMENT '点赞数',
+                              `conten` text COMMENT '文章内容',
+                              `reward_tile` varchar(128) DEFAULT NULL COMMENT '打赏标题',
+                              `reward_pic_url` varchar(128) DEFAULT NULL COMMENT '打赏图片URL',
+                              `if_publish` int(11) NOT NULL DEFAULT '0' COMMENT '是否发布',
+                              `type` varchar(32) DEFAULT NULL COMMENT '文章类型 字典',
+                              PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='社区文章 ';
 
 /*Data for the table `ct_article` */
@@ -40,11 +40,11 @@ CREATE TABLE `ct_article` (
 /*Table structure for table `ct_config` */
 
 CREATE TABLE `ct_config` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
-  `config_key` varchar(32) DEFAULT NULL COMMENT '标识',
-  `config_value` varchar(128) DEFAULT NULL COMMENT '值',
-  PRIMARY KEY (`id`)
+                             `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                             `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+                             `config_key` varchar(32) DEFAULT NULL COMMENT '标识',
+                             `config_value` varchar(128) DEFAULT NULL COMMENT '值',
+                             PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='社区配置 ';
 
 /*Data for the table `ct_config` */
@@ -52,17 +52,17 @@ CREATE TABLE `ct_config` (
 /*Table structure for table `ct_discuss` */
 
 CREATE TABLE `ct_discuss` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `create_man` bigint(20) DEFAULT NULL COMMENT '创建人',
-  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-  `update_man` bigint(20) DEFAULT NULL COMMENT '更新人',
-  `update_tie` datetime DEFAULT NULL COMMENT '更新时间',
-  `article_id` bigint(20) DEFAULT NULL COMMENT '所属文章',
-  `content` varchar(1024) DEFAULT NULL COMMENT '内容',
-  `replay_id` bigint(20) DEFAULT NULL COMMENT '@ 回复谁',
-  `like_count` int(11) DEFAULT NULL COMMENT '点赞数',
-  `type` int(11) DEFAULT NULL COMMENT '评论类型 1回复文章2回复评论',
-  PRIMARY KEY (`id`)
+                              `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                              `create_man` bigint(20) DEFAULT NULL COMMENT '创建人',
+                              `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+                              `update_man` bigint(20) DEFAULT NULL COMMENT '更新人',
+                              `update_tie` datetime DEFAULT NULL COMMENT '更新时间',
+                              `article_id` bigint(20) DEFAULT NULL COMMENT '所属文章',
+                              `content` varchar(1024) DEFAULT NULL COMMENT '内容',
+                              `replay_id` bigint(20) DEFAULT NULL COMMENT '@ 回复谁',
+                              `like_count` int(11) DEFAULT NULL COMMENT '点赞数',
+                              `type` int(11) DEFAULT NULL COMMENT '评论类型 1回复文章2回复评论',
+                              PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='社区文章评论 ';
 
 /*Data for the table `ct_discuss` */
@@ -70,18 +70,18 @@ CREATE TABLE `ct_discuss` (
 /*Table structure for table `ct_menu` */
 
 CREATE TABLE `ct_menu` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
-  `name` varchar(32) DEFAULT NULL COMMENT '菜单名称',
-  `parent_id` bigint(20) DEFAULT NULL COMMENT '上级菜单',
-  `type` varchar(32) DEFAULT NULL COMMENT '菜单类型',
-  `if_show` int(11) NOT NULL DEFAULT '1' COMMENT '是否显示',
-  PRIMARY KEY (`id`)
+                           `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                           `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+                           `name` varchar(32) DEFAULT NULL COMMENT '菜单名称',
+                           `parent_id` bigint(20) DEFAULT NULL COMMENT '上级菜单',
+                           `type` varchar(32) DEFAULT NULL COMMENT '菜单类型',
+                           `if_show` int(11) NOT NULL DEFAULT '1' COMMENT '是否显示',
+                           PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='社区菜单 ';
 
 /*Data for the table `ct_menu` */
 
-insert  into `ct_menu`(`id`,`update_time`,`name`,`parent_id`,`type`,`if_show`) values 
+insert  into `ct_menu`(`id`,`update_time`,`name`,`parent_id`,`type`,`if_show`) values
 (1,'2019-05-20 09:39:11','首页',NULL,'1',1),
 (2,'2019-05-20 09:39:21','社区',NULL,'1',1),
 (7,'2019-05-20 09:42:52','最新',2,'1',1),
@@ -93,11 +93,11 @@ insert  into `ct_menu`(`id`,`update_time`,`name`,`parent_id`,`type`,`if_show`) v
 /*Table structure for table `ct_tag` */
 
 CREATE TABLE `ct_tag` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
-  `name` varchar(32) DEFAULT NULL COMMENT '名称',
-  `menu_id` bigint(20) DEFAULT NULL COMMENT '所属菜单',
-  PRIMARY KEY (`id`)
+                          `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                          `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+                          `name` varchar(32) DEFAULT NULL COMMENT '名称',
+                          `menu_id` bigint(20) DEFAULT NULL COMMENT '所属菜单',
+                          PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='社区标签 ';
 
 /*Data for the table `ct_tag` */
@@ -105,10 +105,10 @@ CREATE TABLE `ct_tag` (
 /*Table structure for table `ct_tag_article` */
 
 CREATE TABLE `ct_tag_article` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `ta_id` bigint(20) DEFAULT NULL COMMENT 'ta_id',
-  `article_id` bigint(20) DEFAULT NULL COMMENT 'article_id',
-  PRIMARY KEY (`id`)
+                                  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                  `ta_id` bigint(20) DEFAULT NULL COMMENT 'ta_id',
+                                  `article_id` bigint(20) DEFAULT NULL COMMENT 'article_id',
+                                  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='标签文章关系 ';
 
 /*Data for the table `ct_tag_article` */
@@ -116,16 +116,16 @@ CREATE TABLE `ct_tag_article` (
 /*Table structure for table `ct_user` */
 
 CREATE TABLE `ct_user` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
-  `sys_user_id` bigint(20) NOT NULL COMMENT '登录账号id',
-  `followed` int(11) NOT NULL DEFAULT '1' COMMENT '被关注邮件提醒',
-  `follow_new` int(11) NOT NULL DEFAULT '1' COMMENT '关注人发布新文章提醒',
-  `nickname` varchar(32) DEFAULT NULL COMMENT '昵称',
-  `head_url` varchar(128) DEFAULT NULL COMMENT '头像',
-  `introduce` varchar(512) DEFAULT NULL COMMENT '个人介绍',
-  PRIMARY KEY (`id`)
+                           `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                           `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+                           `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+                           `sys_user_id` bigint(20) NOT NULL COMMENT '登录账号id',
+                           `followed` int(11) NOT NULL DEFAULT '1' COMMENT '被关注邮件提醒',
+                           `follow_new` int(11) NOT NULL DEFAULT '1' COMMENT '关注人发布新文章提醒',
+                           `nickname` varchar(32) DEFAULT NULL COMMENT '昵称',
+                           `head_url` varchar(128) DEFAULT NULL COMMENT '头像',
+                           `introduce` varchar(512) DEFAULT NULL COMMENT '个人介绍',
+                           PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='社区用户 ';
 
 /*Data for the table `ct_user` */
@@ -133,26 +133,26 @@ CREATE TABLE `ct_user` (
 /*Table structure for table `pdman_db_version` */
 
 CREATE TABLE `pdman_db_version` (
-  `DB_VERSION` varchar(256) DEFAULT NULL,
-  `VERSION_DESC` varchar(1024) DEFAULT NULL,
-  `CREATED_TIME` varchar(32) DEFAULT NULL
+                                    `DB_VERSION` varchar(256) DEFAULT NULL,
+                                    `VERSION_DESC` varchar(1024) DEFAULT NULL,
+                                    `CREATED_TIME` varchar(32) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `pdman_db_version` */
 
-insert  into `pdman_db_version`(`DB_VERSION`,`VERSION_DESC`,`CREATED_TIME`) values 
+insert  into `pdman_db_version`(`DB_VERSION`,`VERSION_DESC`,`CREATED_TIME`) values
 ('v0.0.0','默认版本，新增的版本不能低于此版本','2019-05-20 09:50:14');
 
 /*Table structure for table `qrtz_blob_triggers` */
 
 CREATE TABLE `qrtz_blob_triggers` (
-  `SCHED_NAME` varchar(120) NOT NULL,
-  `TRIGGER_NAME` varchar(200) NOT NULL,
-  `TRIGGER_GROUP` varchar(200) NOT NULL,
-  `BLOB_DATA` blob,
-  PRIMARY KEY (`SCHED_NAME`,`TRIGGER_NAME`,`TRIGGER_GROUP`),
-  KEY `SCHED_NAME` (`SCHED_NAME`,`TRIGGER_NAME`,`TRIGGER_GROUP`),
-  CONSTRAINT `qrtz_blob_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) REFERENCES `qrtz_triggers` (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`)
+                                      `SCHED_NAME` varchar(120) NOT NULL,
+                                      `TRIGGER_NAME` varchar(200) NOT NULL,
+                                      `TRIGGER_GROUP` varchar(200) NOT NULL,
+                                      `BLOB_DATA` blob,
+                                      PRIMARY KEY (`SCHED_NAME`,`TRIGGER_NAME`,`TRIGGER_GROUP`),
+                                      KEY `SCHED_NAME` (`SCHED_NAME`,`TRIGGER_NAME`,`TRIGGER_GROUP`),
+                                      CONSTRAINT `qrtz_blob_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) REFERENCES `qrtz_triggers` (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `qrtz_blob_triggers` */
@@ -160,10 +160,10 @@ CREATE TABLE `qrtz_blob_triggers` (
 /*Table structure for table `qrtz_calendars` */
 
 CREATE TABLE `qrtz_calendars` (
-  `SCHED_NAME` varchar(120) NOT NULL,
-  `CALENDAR_NAME` varchar(200) NOT NULL,
-  `CALENDAR` blob NOT NULL,
-  PRIMARY KEY (`SCHED_NAME`,`CALENDAR_NAME`)
+                                  `SCHED_NAME` varchar(120) NOT NULL,
+                                  `CALENDAR_NAME` varchar(200) NOT NULL,
+                                  `CALENDAR` blob NOT NULL,
+                                  PRIMARY KEY (`SCHED_NAME`,`CALENDAR_NAME`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `qrtz_calendars` */
@@ -171,44 +171,44 @@ CREATE TABLE `qrtz_calendars` (
 /*Table structure for table `qrtz_cron_triggers` */
 
 CREATE TABLE `qrtz_cron_triggers` (
-  `SCHED_NAME` varchar(120) NOT NULL,
-  `TRIGGER_NAME` varchar(200) NOT NULL,
-  `TRIGGER_GROUP` varchar(200) NOT NULL,
-  `CRON_EXPRESSION` varchar(120) NOT NULL,
-  `TIME_ZONE_ID` varchar(80) DEFAULT NULL,
-  PRIMARY KEY (`SCHED_NAME`,`TRIGGER_NAME`,`TRIGGER_GROUP`),
-  CONSTRAINT `qrtz_cron_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) REFERENCES `qrtz_triggers` (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`)
+                                      `SCHED_NAME` varchar(120) NOT NULL,
+                                      `TRIGGER_NAME` varchar(200) NOT NULL,
+                                      `TRIGGER_GROUP` varchar(200) NOT NULL,
+                                      `CRON_EXPRESSION` varchar(120) NOT NULL,
+                                      `TIME_ZONE_ID` varchar(80) DEFAULT NULL,
+                                      PRIMARY KEY (`SCHED_NAME`,`TRIGGER_NAME`,`TRIGGER_GROUP`),
+                                      CONSTRAINT `qrtz_cron_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) REFERENCES `qrtz_triggers` (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `qrtz_cron_triggers` */
 
-insert  into `qrtz_cron_triggers`(`SCHED_NAME`,`TRIGGER_NAME`,`TRIGGER_GROUP`,`CRON_EXPRESSION`,`TIME_ZONE_ID`) values 
+insert  into `qrtz_cron_triggers`(`SCHED_NAME`,`TRIGGER_NAME`,`TRIGGER_GROUP`,`CRON_EXPRESSION`,`TIME_ZONE_ID`) values
 ('RenrenScheduler','TASK_1','DEFAULT','0 0/30 * * * ?','Asia/Shanghai'),
 ('RenrenScheduler','TASK_2','DEFAULT','0 0/30 * * * ?','Asia/Shanghai');
 
 /*Table structure for table `qrtz_fired_triggers` */
 
 CREATE TABLE `qrtz_fired_triggers` (
-  `SCHED_NAME` varchar(120) NOT NULL,
-  `ENTRY_ID` varchar(95) NOT NULL,
-  `TRIGGER_NAME` varchar(200) NOT NULL,
-  `TRIGGER_GROUP` varchar(200) NOT NULL,
-  `INSTANCE_NAME` varchar(200) NOT NULL,
-  `FIRED_TIME` bigint(13) NOT NULL,
-  `SCHED_TIME` bigint(13) NOT NULL,
-  `PRIORITY` int(11) NOT NULL,
-  `STATE` varchar(16) NOT NULL,
-  `JOB_NAME` varchar(200) DEFAULT NULL,
-  `JOB_GROUP` varchar(200) DEFAULT NULL,
-  `IS_NONCONCURRENT` varchar(1) DEFAULT NULL,
-  `REQUESTS_RECOVERY` varchar(1) DEFAULT NULL,
-  PRIMARY KEY (`SCHED_NAME`,`ENTRY_ID`),
-  KEY `IDX_QRTZ_FT_TRIG_INST_NAME` (`SCHED_NAME`,`INSTANCE_NAME`),
-  KEY `IDX_QRTZ_FT_INST_JOB_REQ_RCVRY` (`SCHED_NAME`,`INSTANCE_NAME`,`REQUESTS_RECOVERY`),
-  KEY `IDX_QRTZ_FT_J_G` (`SCHED_NAME`,`JOB_NAME`,`JOB_GROUP`),
-  KEY `IDX_QRTZ_FT_JG` (`SCHED_NAME`,`JOB_GROUP`),
-  KEY `IDX_QRTZ_FT_T_G` (`SCHED_NAME`,`TRIGGER_NAME`,`TRIGGER_GROUP`),
-  KEY `IDX_QRTZ_FT_TG` (`SCHED_NAME`,`TRIGGER_GROUP`)
+                                       `SCHED_NAME` varchar(120) NOT NULL,
+                                       `ENTRY_ID` varchar(95) NOT NULL,
+                                       `TRIGGER_NAME` varchar(200) NOT NULL,
+                                       `TRIGGER_GROUP` varchar(200) NOT NULL,
+                                       `INSTANCE_NAME` varchar(200) NOT NULL,
+                                       `FIRED_TIME` bigint(13) NOT NULL,
+                                       `SCHED_TIME` bigint(13) NOT NULL,
+                                       `PRIORITY` int(11) NOT NULL,
+                                       `STATE` varchar(16) NOT NULL,
+                                       `JOB_NAME` varchar(200) DEFAULT NULL,
+                                       `JOB_GROUP` varchar(200) DEFAULT NULL,
+                                       `IS_NONCONCURRENT` varchar(1) DEFAULT NULL,
+                                       `REQUESTS_RECOVERY` varchar(1) DEFAULT NULL,
+                                       PRIMARY KEY (`SCHED_NAME`,`ENTRY_ID`),
+                                       KEY `IDX_QRTZ_FT_TRIG_INST_NAME` (`SCHED_NAME`,`INSTANCE_NAME`),
+                                       KEY `IDX_QRTZ_FT_INST_JOB_REQ_RCVRY` (`SCHED_NAME`,`INSTANCE_NAME`,`REQUESTS_RECOVERY`),
+                                       KEY `IDX_QRTZ_FT_J_G` (`SCHED_NAME`,`JOB_NAME`,`JOB_GROUP`),
+                                       KEY `IDX_QRTZ_FT_JG` (`SCHED_NAME`,`JOB_GROUP`),
+                                       KEY `IDX_QRTZ_FT_T_G` (`SCHED_NAME`,`TRIGGER_NAME`,`TRIGGER_GROUP`),
+                                       KEY `IDX_QRTZ_FT_TG` (`SCHED_NAME`,`TRIGGER_GROUP`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `qrtz_fired_triggers` */
@@ -216,47 +216,47 @@ CREATE TABLE `qrtz_fired_triggers` (
 /*Table structure for table `qrtz_job_details` */
 
 CREATE TABLE `qrtz_job_details` (
-  `SCHED_NAME` varchar(120) NOT NULL,
-  `JOB_NAME` varchar(200) NOT NULL,
-  `JOB_GROUP` varchar(200) NOT NULL,
-  `DESCRIPTION` varchar(250) DEFAULT NULL,
-  `JOB_CLASS_NAME` varchar(250) NOT NULL,
-  `IS_DURABLE` varchar(1) NOT NULL,
-  `IS_NONCONCURRENT` varchar(1) NOT NULL,
-  `IS_UPDATE_DATA` varchar(1) NOT NULL,
-  `REQUESTS_RECOVERY` varchar(1) NOT NULL,
-  `JOB_DATA` blob,
-  PRIMARY KEY (`SCHED_NAME`,`JOB_NAME`,`JOB_GROUP`),
-  KEY `IDX_QRTZ_J_REQ_RECOVERY` (`SCHED_NAME`,`REQUESTS_RECOVERY`),
-  KEY `IDX_QRTZ_J_GRP` (`SCHED_NAME`,`JOB_GROUP`)
+                                    `SCHED_NAME` varchar(120) NOT NULL,
+                                    `JOB_NAME` varchar(200) NOT NULL,
+                                    `JOB_GROUP` varchar(200) NOT NULL,
+                                    `DESCRIPTION` varchar(250) DEFAULT NULL,
+                                    `JOB_CLASS_NAME` varchar(250) NOT NULL,
+                                    `IS_DURABLE` varchar(1) NOT NULL,
+                                    `IS_NONCONCURRENT` varchar(1) NOT NULL,
+                                    `IS_UPDATE_DATA` varchar(1) NOT NULL,
+                                    `REQUESTS_RECOVERY` varchar(1) NOT NULL,
+                                    `JOB_DATA` blob,
+                                    PRIMARY KEY (`SCHED_NAME`,`JOB_NAME`,`JOB_GROUP`),
+                                    KEY `IDX_QRTZ_J_REQ_RECOVERY` (`SCHED_NAME`,`REQUESTS_RECOVERY`),
+                                    KEY `IDX_QRTZ_J_GRP` (`SCHED_NAME`,`JOB_GROUP`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `qrtz_job_details` */
 
-insert  into `qrtz_job_details`(`SCHED_NAME`,`JOB_NAME`,`JOB_GROUP`,`DESCRIPTION`,`JOB_CLASS_NAME`,`IS_DURABLE`,`IS_NONCONCURRENT`,`IS_UPDATE_DATA`,`REQUESTS_RECOVERY`,`JOB_DATA`) values 
+insert  into `qrtz_job_details`(`SCHED_NAME`,`JOB_NAME`,`JOB_GROUP`,`DESCRIPTION`,`JOB_CLASS_NAME`,`IS_DURABLE`,`IS_NONCONCURRENT`,`IS_UPDATE_DATA`,`REQUESTS_RECOVERY`,`JOB_DATA`) values
 ('RenrenScheduler','TASK_1','DEFAULT',NULL,'io.ttn.modules.job.utils.ScheduleJob','0','0','0','0','��\0sr\0org.quartz.JobDataMap���迩��\0\0xr\0&org.quartz.utils.StringKeyDirtyFlagMap�����](\0Z\0allowsTransientDataxr\0org.quartz.utils.DirtyFlagMap�.�(v\n�\0Z\0dirtyL\0mapt\0Ljava/util/Map;xpsr\0java.util.HashMap���`�\0F\0\nloadFactorI\0	thresholdxp?@\0\0\0\0\0w\0\0\0\0\0\0t\0\rJOB_PARAM_KEYsr\0+io.ttn.modules.job.entity.ScheduleJobEntity\0\0\0\0\0\0\0\0L\0beanNamet\0Ljava/lang/String;L\0\ncreateTimet\0Ljava/util/Date;L\0cronExpressionq\0~\0	L\0jobIdt\0Ljava/lang/Long;L\0\nmethodNameq\0~\0	L\0paramsq\0~\0	L\0remarkq\0~\0	L\0statust\0Ljava/lang/Integer;xpt\0testTasksr\0java.util.Datehj�KYt\0\0xpw\0\0X���0xt\00 0/30 * * * ?sr\0java.lang.Long;��̏#�\0J\0valuexr\0java.lang.Number�����\0\0xp\0\0\0\0\0\0\0t\0testt\0ttnt\0有参数测试sr\0java.lang.Integer⠤���8\0I\0valuexq\0~\0\0\0\0\0x\0'),
 ('RenrenScheduler','TASK_2','DEFAULT',NULL,'io.ttn.modules.job.utils.ScheduleJob','0','0','0','0','��\0sr\0org.quartz.JobDataMap���迩��\0\0xr\0&org.quartz.utils.StringKeyDirtyFlagMap�����](\0Z\0allowsTransientDataxr\0org.quartz.utils.DirtyFlagMap�.�(v\n�\0Z\0dirtyL\0mapt\0Ljava/util/Map;xpsr\0java.util.HashMap���`�\0F\0\nloadFactorI\0	thresholdxp?@\0\0\0\0\0w\0\0\0\0\0\0t\0\rJOB_PARAM_KEYsr\0+io.ttn.modules.job.entity.ScheduleJobEntity\0\0\0\0\0\0\0\0L\0beanNamet\0Ljava/lang/String;L\0\ncreateTimet\0Ljava/util/Date;L\0cronExpressionq\0~\0	L\0jobIdt\0Ljava/lang/Long;L\0\nmethodNameq\0~\0	L\0paramsq\0~\0	L\0remarkq\0~\0	L\0statust\0Ljava/lang/Integer;xpt\0testTasksr\0java.util.Datehj�KYt\0\0xpw\0\0X�w�`xt\00 0/30 * * * ?sr\0java.lang.Long;��̏#�\0J\0valuexr\0java.lang.Number�����\0\0xp\0\0\0\0\0\0\0t\0test2pt\0无参数测试sr\0java.lang.Integer⠤���8\0I\0valuexq\0~\0\0\0\0x\0');
 
 /*Table structure for table `qrtz_locks` */
 
 CREATE TABLE `qrtz_locks` (
-  `SCHED_NAME` varchar(120) NOT NULL,
-  `LOCK_NAME` varchar(40) NOT NULL,
-  PRIMARY KEY (`SCHED_NAME`,`LOCK_NAME`)
+                              `SCHED_NAME` varchar(120) NOT NULL,
+                              `LOCK_NAME` varchar(40) NOT NULL,
+                              PRIMARY KEY (`SCHED_NAME`,`LOCK_NAME`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `qrtz_locks` */
 
-insert  into `qrtz_locks`(`SCHED_NAME`,`LOCK_NAME`) values 
+insert  into `qrtz_locks`(`SCHED_NAME`,`LOCK_NAME`) values
 ('RenrenScheduler','STATE_ACCESS'),
 ('RenrenScheduler','TRIGGER_ACCESS');
 
 /*Table structure for table `qrtz_paused_trigger_grps` */
 
 CREATE TABLE `qrtz_paused_trigger_grps` (
-  `SCHED_NAME` varchar(120) NOT NULL,
-  `TRIGGER_GROUP` varchar(200) NOT NULL,
-  PRIMARY KEY (`SCHED_NAME`,`TRIGGER_GROUP`)
+                                            `SCHED_NAME` varchar(120) NOT NULL,
+                                            `TRIGGER_GROUP` varchar(200) NOT NULL,
+                                            PRIMARY KEY (`SCHED_NAME`,`TRIGGER_GROUP`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `qrtz_paused_trigger_grps` */
@@ -264,29 +264,29 @@ CREATE TABLE `qrtz_paused_trigger_grps` (
 /*Table structure for table `qrtz_scheduler_state` */
 
 CREATE TABLE `qrtz_scheduler_state` (
-  `SCHED_NAME` varchar(120) NOT NULL,
-  `INSTANCE_NAME` varchar(200) NOT NULL,
-  `LAST_CHECKIN_TIME` bigint(13) NOT NULL,
-  `CHECKIN_INTERVAL` bigint(13) NOT NULL,
-  PRIMARY KEY (`SCHED_NAME`,`INSTANCE_NAME`)
+                                        `SCHED_NAME` varchar(120) NOT NULL,
+                                        `INSTANCE_NAME` varchar(200) NOT NULL,
+                                        `LAST_CHECKIN_TIME` bigint(13) NOT NULL,
+                                        `CHECKIN_INTERVAL` bigint(13) NOT NULL,
+                                        PRIMARY KEY (`SCHED_NAME`,`INSTANCE_NAME`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `qrtz_scheduler_state` */
 
-insert  into `qrtz_scheduler_state`(`SCHED_NAME`,`INSTANCE_NAME`,`LAST_CHECKIN_TIME`,`CHECKIN_INTERVAL`) values 
+insert  into `qrtz_scheduler_state`(`SCHED_NAME`,`INSTANCE_NAME`,`LAST_CHECKIN_TIME`,`CHECKIN_INTERVAL`) values
 ('RenrenScheduler','7YQKBM14KZ1C7K01539709422143',1539711136637,15000);
 
 /*Table structure for table `qrtz_simple_triggers` */
 
 CREATE TABLE `qrtz_simple_triggers` (
-  `SCHED_NAME` varchar(120) NOT NULL,
-  `TRIGGER_NAME` varchar(200) NOT NULL,
-  `TRIGGER_GROUP` varchar(200) NOT NULL,
-  `REPEAT_COUNT` bigint(7) NOT NULL,
-  `REPEAT_INTERVAL` bigint(12) NOT NULL,
-  `TIMES_TRIGGERED` bigint(10) NOT NULL,
-  PRIMARY KEY (`SCHED_NAME`,`TRIGGER_NAME`,`TRIGGER_GROUP`),
-  CONSTRAINT `qrtz_simple_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) REFERENCES `qrtz_triggers` (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`)
+                                        `SCHED_NAME` varchar(120) NOT NULL,
+                                        `TRIGGER_NAME` varchar(200) NOT NULL,
+                                        `TRIGGER_GROUP` varchar(200) NOT NULL,
+                                        `REPEAT_COUNT` bigint(7) NOT NULL,
+                                        `REPEAT_INTERVAL` bigint(12) NOT NULL,
+                                        `TIMES_TRIGGERED` bigint(10) NOT NULL,
+                                        PRIMARY KEY (`SCHED_NAME`,`TRIGGER_NAME`,`TRIGGER_GROUP`),
+                                        CONSTRAINT `qrtz_simple_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) REFERENCES `qrtz_triggers` (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `qrtz_simple_triggers` */
@@ -294,22 +294,22 @@ CREATE TABLE `qrtz_simple_triggers` (
 /*Table structure for table `qrtz_simprop_triggers` */
 
 CREATE TABLE `qrtz_simprop_triggers` (
-  `SCHED_NAME` varchar(120) NOT NULL,
-  `TRIGGER_NAME` varchar(200) NOT NULL,
-  `TRIGGER_GROUP` varchar(200) NOT NULL,
-  `STR_PROP_1` varchar(512) DEFAULT NULL,
-  `STR_PROP_2` varchar(512) DEFAULT NULL,
-  `STR_PROP_3` varchar(512) DEFAULT NULL,
-  `INT_PROP_1` int(11) DEFAULT NULL,
-  `INT_PROP_2` int(11) DEFAULT NULL,
-  `LONG_PROP_1` bigint(20) DEFAULT NULL,
-  `LONG_PROP_2` bigint(20) DEFAULT NULL,
-  `DEC_PROP_1` decimal(13,4) DEFAULT NULL,
-  `DEC_PROP_2` decimal(13,4) DEFAULT NULL,
-  `BOOL_PROP_1` varchar(1) DEFAULT NULL,
-  `BOOL_PROP_2` varchar(1) DEFAULT NULL,
-  PRIMARY KEY (`SCHED_NAME`,`TRIGGER_NAME`,`TRIGGER_GROUP`),
-  CONSTRAINT `qrtz_simprop_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) REFERENCES `qrtz_triggers` (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`)
+                                         `SCHED_NAME` varchar(120) NOT NULL,
+                                         `TRIGGER_NAME` varchar(200) NOT NULL,
+                                         `TRIGGER_GROUP` varchar(200) NOT NULL,
+                                         `STR_PROP_1` varchar(512) DEFAULT NULL,
+                                         `STR_PROP_2` varchar(512) DEFAULT NULL,
+                                         `STR_PROP_3` varchar(512) DEFAULT NULL,
+                                         `INT_PROP_1` int(11) DEFAULT NULL,
+                                         `INT_PROP_2` int(11) DEFAULT NULL,
+                                         `LONG_PROP_1` bigint(20) DEFAULT NULL,
+                                         `LONG_PROP_2` bigint(20) DEFAULT NULL,
+                                         `DEC_PROP_1` decimal(13,4) DEFAULT NULL,
+                                         `DEC_PROP_2` decimal(13,4) DEFAULT NULL,
+                                         `BOOL_PROP_1` varchar(1) DEFAULT NULL,
+                                         `BOOL_PROP_2` varchar(1) DEFAULT NULL,
+                                         PRIMARY KEY (`SCHED_NAME`,`TRIGGER_NAME`,`TRIGGER_GROUP`),
+                                         CONSTRAINT `qrtz_simprop_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) REFERENCES `qrtz_triggers` (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `qrtz_simprop_triggers` */
@@ -317,83 +317,83 @@ CREATE TABLE `qrtz_simprop_triggers` (
 /*Table structure for table `qrtz_triggers` */
 
 CREATE TABLE `qrtz_triggers` (
-  `SCHED_NAME` varchar(120) NOT NULL,
-  `TRIGGER_NAME` varchar(200) NOT NULL,
-  `TRIGGER_GROUP` varchar(200) NOT NULL,
-  `JOB_NAME` varchar(200) NOT NULL,
-  `JOB_GROUP` varchar(200) NOT NULL,
-  `DESCRIPTION` varchar(250) DEFAULT NULL,
-  `NEXT_FIRE_TIME` bigint(13) DEFAULT NULL,
-  `PREV_FIRE_TIME` bigint(13) DEFAULT NULL,
-  `PRIORITY` int(11) DEFAULT NULL,
-  `TRIGGER_STATE` varchar(16) NOT NULL,
-  `TRIGGER_TYPE` varchar(8) NOT NULL,
-  `START_TIME` bigint(13) NOT NULL,
-  `END_TIME` bigint(13) DEFAULT NULL,
-  `CALENDAR_NAME` varchar(200) DEFAULT NULL,
-  `MISFIRE_INSTR` smallint(2) DEFAULT NULL,
-  `JOB_DATA` blob,
-  PRIMARY KEY (`SCHED_NAME`,`TRIGGER_NAME`,`TRIGGER_GROUP`),
-  KEY `IDX_QRTZ_T_J` (`SCHED_NAME`,`JOB_NAME`,`JOB_GROUP`),
-  KEY `IDX_QRTZ_T_JG` (`SCHED_NAME`,`JOB_GROUP`),
-  KEY `IDX_QRTZ_T_C` (`SCHED_NAME`,`CALENDAR_NAME`),
-  KEY `IDX_QRTZ_T_G` (`SCHED_NAME`,`TRIGGER_GROUP`),
-  KEY `IDX_QRTZ_T_STATE` (`SCHED_NAME`,`TRIGGER_STATE`),
-  KEY `IDX_QRTZ_T_N_STATE` (`SCHED_NAME`,`TRIGGER_NAME`,`TRIGGER_GROUP`,`TRIGGER_STATE`),
-  KEY `IDX_QRTZ_T_N_G_STATE` (`SCHED_NAME`,`TRIGGER_GROUP`,`TRIGGER_STATE`),
-  KEY `IDX_QRTZ_T_NEXT_FIRE_TIME` (`SCHED_NAME`,`NEXT_FIRE_TIME`),
-  KEY `IDX_QRTZ_T_NFT_ST` (`SCHED_NAME`,`TRIGGER_STATE`,`NEXT_FIRE_TIME`),
-  KEY `IDX_QRTZ_T_NFT_MISFIRE` (`SCHED_NAME`,`MISFIRE_INSTR`,`NEXT_FIRE_TIME`),
-  KEY `IDX_QRTZ_T_NFT_ST_MISFIRE` (`SCHED_NAME`,`MISFIRE_INSTR`,`NEXT_FIRE_TIME`,`TRIGGER_STATE`),
-  KEY `IDX_QRTZ_T_NFT_ST_MISFIRE_GRP` (`SCHED_NAME`,`MISFIRE_INSTR`,`NEXT_FIRE_TIME`,`TRIGGER_GROUP`,`TRIGGER_STATE`),
-  CONSTRAINT `qrtz_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `JOB_NAME`, `JOB_GROUP`) REFERENCES `qrtz_job_details` (`SCHED_NAME`, `JOB_NAME`, `JOB_GROUP`)
+                                 `SCHED_NAME` varchar(120) NOT NULL,
+                                 `TRIGGER_NAME` varchar(200) NOT NULL,
+                                 `TRIGGER_GROUP` varchar(200) NOT NULL,
+                                 `JOB_NAME` varchar(200) NOT NULL,
+                                 `JOB_GROUP` varchar(200) NOT NULL,
+                                 `DESCRIPTION` varchar(250) DEFAULT NULL,
+                                 `NEXT_FIRE_TIME` bigint(13) DEFAULT NULL,
+                                 `PREV_FIRE_TIME` bigint(13) DEFAULT NULL,
+                                 `PRIORITY` int(11) DEFAULT NULL,
+                                 `TRIGGER_STATE` varchar(16) NOT NULL,
+                                 `TRIGGER_TYPE` varchar(8) NOT NULL,
+                                 `START_TIME` bigint(13) NOT NULL,
+                                 `END_TIME` bigint(13) DEFAULT NULL,
+                                 `CALENDAR_NAME` varchar(200) DEFAULT NULL,
+                                 `MISFIRE_INSTR` smallint(2) DEFAULT NULL,
+                                 `JOB_DATA` blob,
+                                 PRIMARY KEY (`SCHED_NAME`,`TRIGGER_NAME`,`TRIGGER_GROUP`),
+                                 KEY `IDX_QRTZ_T_J` (`SCHED_NAME`,`JOB_NAME`,`JOB_GROUP`),
+                                 KEY `IDX_QRTZ_T_JG` (`SCHED_NAME`,`JOB_GROUP`),
+                                 KEY `IDX_QRTZ_T_C` (`SCHED_NAME`,`CALENDAR_NAME`),
+                                 KEY `IDX_QRTZ_T_G` (`SCHED_NAME`,`TRIGGER_GROUP`),
+                                 KEY `IDX_QRTZ_T_STATE` (`SCHED_NAME`,`TRIGGER_STATE`),
+                                 KEY `IDX_QRTZ_T_N_STATE` (`SCHED_NAME`,`TRIGGER_NAME`,`TRIGGER_GROUP`,`TRIGGER_STATE`),
+                                 KEY `IDX_QRTZ_T_N_G_STATE` (`SCHED_NAME`,`TRIGGER_GROUP`,`TRIGGER_STATE`),
+                                 KEY `IDX_QRTZ_T_NEXT_FIRE_TIME` (`SCHED_NAME`,`NEXT_FIRE_TIME`),
+                                 KEY `IDX_QRTZ_T_NFT_ST` (`SCHED_NAME`,`TRIGGER_STATE`,`NEXT_FIRE_TIME`),
+                                 KEY `IDX_QRTZ_T_NFT_MISFIRE` (`SCHED_NAME`,`MISFIRE_INSTR`,`NEXT_FIRE_TIME`),
+                                 KEY `IDX_QRTZ_T_NFT_ST_MISFIRE` (`SCHED_NAME`,`MISFIRE_INSTR`,`NEXT_FIRE_TIME`,`TRIGGER_STATE`),
+                                 KEY `IDX_QRTZ_T_NFT_ST_MISFIRE_GRP` (`SCHED_NAME`,`MISFIRE_INSTR`,`NEXT_FIRE_TIME`,`TRIGGER_GROUP`,`TRIGGER_STATE`),
+                                 CONSTRAINT `qrtz_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `JOB_NAME`, `JOB_GROUP`) REFERENCES `qrtz_job_details` (`SCHED_NAME`, `JOB_NAME`, `JOB_GROUP`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `qrtz_triggers` */
 
-insert  into `qrtz_triggers`(`SCHED_NAME`,`TRIGGER_NAME`,`TRIGGER_GROUP`,`JOB_NAME`,`JOB_GROUP`,`DESCRIPTION`,`NEXT_FIRE_TIME`,`PREV_FIRE_TIME`,`PRIORITY`,`TRIGGER_STATE`,`TRIGGER_TYPE`,`START_TIME`,`END_TIME`,`CALENDAR_NAME`,`MISFIRE_INSTR`,`JOB_DATA`) values 
+insert  into `qrtz_triggers`(`SCHED_NAME`,`TRIGGER_NAME`,`TRIGGER_GROUP`,`JOB_NAME`,`JOB_GROUP`,`DESCRIPTION`,`NEXT_FIRE_TIME`,`PREV_FIRE_TIME`,`PRIORITY`,`TRIGGER_STATE`,`TRIGGER_TYPE`,`START_TIME`,`END_TIME`,`CALENDAR_NAME`,`MISFIRE_INSTR`,`JOB_DATA`) values
 ('RenrenScheduler','TASK_1','DEFAULT','TASK_1','DEFAULT',NULL,1539354600000,-1,5,'PAUSED','CRON',1539354400000,0,NULL,2,'��\0sr\0org.quartz.JobDataMap���迩��\0\0xr\0&org.quartz.utils.StringKeyDirtyFlagMap�����](\0Z\0allowsTransientDataxr\0org.quartz.utils.DirtyFlagMap�.�(v\n�\0Z\0dirtyL\0mapt\0Ljava/util/Map;xpsr\0java.util.HashMap���`�\0F\0\nloadFactorI\0	thresholdxp?@\0\0\0\0\0w\0\0\0\0\0\0t\0\rJOB_PARAM_KEYsr\0+io.ttn.modules.job.entity.ScheduleJobEntity\0\0\0\0\0\0\0\0L\0beanNamet\0Ljava/lang/String;L\0\ncreateTimet\0Ljava/util/Date;L\0cronExpressionq\0~\0	L\0jobIdt\0Ljava/lang/Long;L\0\nmethodNameq\0~\0	L\0paramsq\0~\0	L\0remarkq\0~\0	L\0statust\0Ljava/lang/Integer;xpt\0testTasksr\0java.util.Datehj�KYt\0\0xpw\0\0X���0xt\00 0/30 * * * ?sr\0java.lang.Long;��̏#�\0J\0valuexr\0java.lang.Number�����\0\0xp\0\0\0\0\0\0\0t\0testt\0ttnt\0有参数测试sr\0java.lang.Integer⠤���8\0I\0valuexq\0~\0\0\0\0x\0'),
 ('RenrenScheduler','TASK_2','DEFAULT','TASK_2','DEFAULT',NULL,1539354600000,-1,5,'PAUSED','CRON',1539354400000,0,NULL,2,'��\0sr\0org.quartz.JobDataMap���迩��\0\0xr\0&org.quartz.utils.StringKeyDirtyFlagMap�����](\0Z\0allowsTransientDataxr\0org.quartz.utils.DirtyFlagMap�.�(v\n�\0Z\0dirtyL\0mapt\0Ljava/util/Map;xpsr\0java.util.HashMap���`�\0F\0\nloadFactorI\0	thresholdxp?@\0\0\0\0\0w\0\0\0\0\0\0t\0\rJOB_PARAM_KEYsr\0+io.ttn.modules.job.entity.ScheduleJobEntity\0\0\0\0\0\0\0\0L\0beanNamet\0Ljava/lang/String;L\0\ncreateTimet\0Ljava/util/Date;L\0cronExpressionq\0~\0	L\0jobIdt\0Ljava/lang/Long;L\0\nmethodNameq\0~\0	L\0paramsq\0~\0	L\0remarkq\0~\0	L\0statust\0Ljava/lang/Integer;xpt\0testTasksr\0java.util.Datehj�KYt\0\0xpw\0\0X�w�`xt\00 0/30 * * * ?sr\0java.lang.Long;��̏#�\0J\0valuexr\0java.lang.Number�����\0\0xp\0\0\0\0\0\0\0t\0test2pt\0无参数测试sr\0java.lang.Integer⠤���8\0I\0valuexq\0~\0\0\0\0x\0');
 
 /*Table structure for table `schedule_job` */
 
 CREATE TABLE `schedule_job` (
-  `job_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '任务id',
-  `bean_name` varchar(200) DEFAULT NULL COMMENT 'spring bean名称',
-  `method_name` varchar(100) DEFAULT NULL COMMENT '方法名',
-  `params` varchar(2000) DEFAULT NULL COMMENT '参数',
-  `cron_expression` varchar(100) DEFAULT NULL COMMENT 'cron表达式',
-  `status` tinyint(4) DEFAULT NULL COMMENT '任务状态  0：正常  1：暂停',
-  `remark` varchar(255) DEFAULT NULL COMMENT '备注',
-  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-  PRIMARY KEY (`job_id`)
+                                `job_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '任务id',
+                                `bean_name` varchar(200) DEFAULT NULL COMMENT 'spring bean名称',
+                                `method_name` varchar(100) DEFAULT NULL COMMENT '方法名',
+                                `params` varchar(2000) DEFAULT NULL COMMENT '参数',
+                                `cron_expression` varchar(100) DEFAULT NULL COMMENT 'cron表达式',
+                                `status` tinyint(4) DEFAULT NULL COMMENT '任务状态  0：正常  1：暂停',
+                                `remark` varchar(255) DEFAULT NULL COMMENT '备注',
+                                `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+                                PRIMARY KEY (`job_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='定时任务';
 
 /*Data for the table `schedule_job` */
 
-insert  into `schedule_job`(`job_id`,`bean_name`,`method_name`,`params`,`cron_expression`,`status`,`remark`,`create_time`) values 
+insert  into `schedule_job`(`job_id`,`bean_name`,`method_name`,`params`,`cron_expression`,`status`,`remark`,`create_time`) values
 (1,'testTask','test','ttn','0 0/30 * * * ?',1,'有参数测试','2016-12-01 23:16:46'),
 (2,'testTask','test2',NULL,'0 0/30 * * * ?',1,'无参数测试','2016-12-03 14:55:56');
 
 /*Table structure for table `schedule_job_log` */
 
 CREATE TABLE `schedule_job_log` (
-  `log_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '任务日志id',
-  `job_id` bigint(20) NOT NULL COMMENT '任务id',
-  `bean_name` varchar(200) DEFAULT NULL COMMENT 'spring bean名称',
-  `method_name` varchar(100) DEFAULT NULL COMMENT '方法名',
-  `params` varchar(2000) DEFAULT NULL COMMENT '参数',
-  `status` tinyint(4) NOT NULL COMMENT '任务状态    0：成功    1：失败',
-  `error` varchar(2000) DEFAULT NULL COMMENT '失败信息',
-  `times` int(11) NOT NULL COMMENT '耗时(单位：毫秒)',
-  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-  PRIMARY KEY (`log_id`),
-  KEY `job_id` (`job_id`)
+                                    `log_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '任务日志id',
+                                    `job_id` bigint(20) NOT NULL COMMENT '任务id',
+                                    `bean_name` varchar(200) DEFAULT NULL COMMENT 'spring bean名称',
+                                    `method_name` varchar(100) DEFAULT NULL COMMENT '方法名',
+                                    `params` varchar(2000) DEFAULT NULL COMMENT '参数',
+                                    `status` tinyint(4) NOT NULL COMMENT '任务状态    0：成功    1：失败',
+                                    `error` varchar(2000) DEFAULT NULL COMMENT '失败信息',
+                                    `times` int(11) NOT NULL COMMENT '耗时(单位：毫秒)',
+                                    `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+                                    PRIMARY KEY (`log_id`),
+                                    KEY `job_id` (`job_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='定时任务日志';
 
 /*Data for the table `schedule_job_log` */
 
-insert  into `schedule_job_log`(`log_id`,`job_id`,`bean_name`,`method_name`,`params`,`status`,`error`,`times`,`create_time`) values 
+insert  into `schedule_job_log`(`log_id`,`job_id`,`bean_name`,`method_name`,`params`,`status`,`error`,`times`,`create_time`) values
 (1,1,'testTask','test','ttn',0,NULL,1032,'2018-10-12 22:30:00'),
 (2,1,'testTask','test','ttn',0,NULL,1044,'2018-10-12 23:00:00'),
 (3,1,'testTask','test','ttn',0,NULL,1012,'2018-10-12 23:30:00'),
@@ -408,15 +408,15 @@ insert  into `schedule_job_log`(`log_id`,`job_id`,`bean_name`,`method_name`,`par
 /*Table structure for table `sys_captcha` */
 
 CREATE TABLE `sys_captcha` (
-  `uuid` char(36) NOT NULL COMMENT 'uuid',
-  `code` varchar(6) NOT NULL COMMENT '验证码',
-  `expire_time` datetime DEFAULT NULL COMMENT '过期时间',
-  PRIMARY KEY (`uuid`)
+                               `uuid` char(36) NOT NULL COMMENT 'uuid',
+                               `code` varchar(6) NOT NULL COMMENT '验证码',
+                               `expire_time` datetime DEFAULT NULL COMMENT '过期时间',
+                               PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='系统验证码';
 
 /*Data for the table `sys_captcha` */
 
-insert  into `sys_captcha`(`uuid`,`code`,`expire_time`) values 
+insert  into `sys_captcha`(`uuid`,`code`,`expire_time`) values
 ('005e7a83-7ed7-4919-82ca-ac16e1c49e0e','m2c68','2019-05-06 15:02:25'),
 ('00abf218-aca7-4d7d-87f2-735a5dab6d47','yp8wg','2019-05-06 14:40:49'),
 ('01370b9a-e09a-45b5-8507-3c531da6443c','3xnx8','2019-07-09 17:04:21'),
@@ -603,6 +603,7 @@ insert  into `sys_captcha`(`uuid`,`code`,`expire_time`) values
 ('9379fcc9-ed78-4701-8cb4-3047a9b4531a','82gym','2019-05-06 01:27:06'),
 ('93923659-4b42-4990-8d61-3fc370fab8b7','7g5bw','2019-07-08 13:51:11'),
 ('93d358a8-9025-4810-8b94-359e861be1aa','4cggb','2019-01-31 09:40:48'),
+('95861619-024a-4364-82cb-7e3a3e707ab9','n5pbn','2019-12-27 17:49:23'),
 ('959b5c9e-f4bb-4102-8ec5-b22a042c436a','nw8my','2019-05-05 13:38:22'),
 ('96cdce60-f508-48f9-8192-3aaf2540d213','w7nee','2019-07-08 15:04:56'),
 ('97e02252-065e-4380-87dc-a5ead2833518','4cgf3','2019-03-07 14:58:54'),
@@ -642,6 +643,7 @@ insert  into `sys_captcha`(`uuid`,`code`,`expire_time`) values
 ('ae32c730-dbb2-4b41-8bb3-abb9e1e1c944','3eex5','2019-03-19 16:48:15'),
 ('ae9d06b6-61d1-4067-8f18-1e94d8f0a54e','bmyyp','2019-07-09 15:57:03'),
 ('aecb1b1c-e9c3-4f56-8888-3e7a57772dbb','2g8a3','2019-05-05 13:45:58'),
+('af5cd806-7b39-4bb4-8294-8829cdd084f6','c732a','2019-12-27 17:46:07'),
 ('af6346b0-7a5f-4fed-8583-76368d2b7616','ge3y5','2019-03-07 10:36:07'),
 ('b1396f5f-6714-47fe-8e2f-e0a64944d43c','nnfpa','2019-05-05 13:52:53'),
 ('b19841e7-cf88-45ad-8bd9-c587eb348d69','ep2e5','2019-05-05 18:23:10'),
@@ -747,33 +749,33 @@ insert  into `sys_captcha`(`uuid`,`code`,`expire_time`) values
 /*Table structure for table `sys_company` */
 
 CREATE TABLE `sys_company` (
-  `cp_id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `cp_name` varchar(255) DEFAULT NULL COMMENT '企业名称',
-  `ceo` varchar(255) DEFAULT NULL COMMENT 'CEO',
-  `license_url` varchar(255) DEFAULT NULL COMMENT '营业执照',
-  `phone` varchar(255) DEFAULT NULL COMMENT '联系电话',
-  `allow_account` int(11) DEFAULT NULL COMMENT '许可子账号数量',
-  `address` varchar(128) DEFAULT NULL COMMENT '公司地址',
-  KEY `cp_id` (`cp_id`)
+                               `cp_id` bigint(20) NOT NULL AUTO_INCREMENT,
+                               `cp_name` varchar(255) DEFAULT NULL COMMENT '企业名称',
+                               `ceo` varchar(255) DEFAULT NULL COMMENT 'CEO',
+                               `license_url` varchar(255) DEFAULT NULL COMMENT '营业执照',
+                               `phone` varchar(255) DEFAULT NULL COMMENT '联系电话',
+                               `allow_account` int(11) DEFAULT NULL COMMENT '许可子账号数量',
+                               `address` varchar(128) DEFAULT NULL COMMENT '公司地址',
+                               KEY `cp_id` (`cp_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 /*Data for the table `sys_company` */
 
-insert  into `sys_company`(`cp_id`,`cp_name`,`ceo`,`license_url`,`phone`,`allow_account`,`address`) values 
+insert  into `sys_company`(`cp_id`,`cp_name`,`ceo`,`license_url`,`phone`,`allow_account`,`address`) values
 (1,'品匠装饰','王五',NULL,'11111',1,NULL);
 
 /*Table structure for table `sys_company_menu` */
 
 CREATE TABLE `sys_company_menu` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `cp_id` bigint(20) DEFAULT NULL COMMENT '企业id',
-  `menu_id` bigint(20) DEFAULT NULL COMMENT '菜单id',
-  PRIMARY KEY (`id`)
+                                    `id` bigint(20) NOT NULL AUTO_INCREMENT,
+                                    `cp_id` bigint(20) DEFAULT NULL COMMENT '企业id',
+                                    `menu_id` bigint(20) DEFAULT NULL COMMENT '菜单id',
+                                    PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1655 DEFAULT CHARSET=utf8 COMMENT='企业菜单权限';
 
 /*Data for the table `sys_company_menu` */
 
-insert  into `sys_company_menu`(`id`,`cp_id`,`menu_id`) values 
+insert  into `sys_company_menu`(`id`,`cp_id`,`menu_id`) values
 (1547,1,31),
 (1548,1,247),
 (1549,1,248),
@@ -886,13 +888,13 @@ insert  into `sys_company_menu`(`id`,`cp_id`,`menu_id`) values
 /*Table structure for table `sys_company_regist` */
 
 CREATE TABLE `sys_company_regist` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `cp_name` varchar(256) DEFAULT NULL,
-  `phone` varchar(256) DEFAULT NULL,
-  `username` varchar(256) DEFAULT NULL,
-  `password` varchar(256) DEFAULT NULL,
-  `email` varchar(256) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                                      `id` bigint(20) NOT NULL AUTO_INCREMENT,
+                                      `cp_name` varchar(256) DEFAULT NULL,
+                                      `phone` varchar(256) DEFAULT NULL,
+                                      `username` varchar(256) DEFAULT NULL,
+                                      `password` varchar(256) DEFAULT NULL,
+                                      `email` varchar(256) DEFAULT NULL,
+                                      PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `sys_company_regist` */
@@ -900,34 +902,34 @@ CREATE TABLE `sys_company_regist` (
 /*Table structure for table `sys_config` */
 
 CREATE TABLE `sys_config` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `param_key` varchar(50) DEFAULT NULL COMMENT 'key',
-  `param_value` varchar(2000) DEFAULT NULL COMMENT 'value',
-  `status` tinyint(4) DEFAULT '1' COMMENT '状态   0：隐藏   1：显示',
-  `remark` varchar(500) DEFAULT NULL COMMENT '备注',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `param_key` (`param_key`)
+                              `id` bigint(20) NOT NULL AUTO_INCREMENT,
+                              `param_key` varchar(50) DEFAULT NULL COMMENT 'key',
+                              `param_value` varchar(2000) DEFAULT NULL COMMENT 'value',
+                              `status` tinyint(4) DEFAULT '1' COMMENT '状态   0：隐藏   1：显示',
+                              `remark` varchar(500) DEFAULT NULL COMMENT '备注',
+                              PRIMARY KEY (`id`),
+                              UNIQUE KEY `param_key` (`param_key`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='系统配置信息表';
 
 /*Data for the table `sys_config` */
 
-insert  into `sys_config`(`id`,`param_key`,`param_value`,`status`,`remark`) values 
+insert  into `sys_config`(`id`,`param_key`,`param_value`,`status`,`remark`) values
 (1,'CLOUD_STORAGE_CONFIG_KEY','{\"type\":2,\"qiniuDomain\":\"http://7xqbwh.dl1.z0.glb.clouddn.com\",\"qiniuPrefix\":\"upload\",\"qiniuAccessKey\":\"NrgMfABZxWLo5B-YYSjoE8-AZ1EISdi1Z3ubLOeZ\",\"qiniuSecretKey\":\"uIwJHevMRWU0VLxFvgy0tAcOdGqasdtVlJkdy6vV\",\"qiniuBucketName\":\"ios-app\",\"aliyunDomain\":\"https://ttn-decoration.oss-cn-beijing.aliyuncs.com\",\"aliyunPrefix\":\"\",\"aliyunEndPoint\":\"oss-cn-beijing.aliyuncs.com\",\"aliyunAccessKeyId\":\"LTAIcs0qw35pIOGE\",\"aliyunAccessKeySecret\":\"b4vvZHs415JWGUDI0gbyDl92gaeGr6\",\"aliyunBucketName\":\"ttn-decoration\",\"qcloudDomain\":\"\",\"qcloudPrefix\":\"\",\"qcloudSecretId\":\"\",\"qcloudSecretKey\":\"\",\"qcloudBucketName\":\"\"}',0,'云存储配置信息');
 
 /*Table structure for table `sys_dept` */
 
 CREATE TABLE `sys_dept` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `parent_id` bigint(20) DEFAULT NULL COMMENT '上级部门',
-  `name` varchar(50) NOT NULL COMMENT '名称',
-  `order_num` int(11) DEFAULT NULL COMMENT '排序',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                            `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                            `parent_id` bigint(20) DEFAULT NULL COMMENT '上级部门',
+                            `name` varchar(50) NOT NULL COMMENT '名称',
+                            `order_num` int(11) DEFAULT NULL COMMENT '排序',
+                            `cp_id` bigint(20) DEFAULT NULL,
+                            PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COMMENT='部门';
 
 /*Data for the table `sys_dept` */
 
-insert  into `sys_dept`(`id`,`parent_id`,`name`,`order_num`,`cp_id`) values 
+insert  into `sys_dept`(`id`,`parent_id`,`name`,`order_num`,`cp_id`) values
 (2,9,'综合管理部',1,1),
 (3,9,'销售管理部',2,1),
 (4,9,'施工部',3,1),
@@ -949,16 +951,16 @@ insert  into `sys_dept`(`id`,`parent_id`,`name`,`order_num`,`cp_id`) values
 /*Table structure for table `sys_dept_view` */
 
 CREATE TABLE `sys_dept_view` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `user_id` bigint(20) NOT NULL,
-  `view_id` bigint(20) NOT NULL,
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                                 `id` bigint(20) NOT NULL AUTO_INCREMENT,
+                                 `user_id` bigint(20) NOT NULL,
+                                 `view_id` bigint(20) NOT NULL,
+                                 `cp_id` bigint(20) DEFAULT NULL,
+                                 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='部门视野';
 
 /*Data for the table `sys_dept_view` */
 
-insert  into `sys_dept_view`(`id`,`user_id`,`view_id`,`cp_id`) values 
+insert  into `sys_dept_view`(`id`,`user_id`,`view_id`,`cp_id`) values
 (4,10,6,1),
 (5,10,4,1),
 (6,10,7,1),
@@ -968,18 +970,18 @@ insert  into `sys_dept_view`(`id`,`user_id`,`view_id`,`cp_id`) values
 /*Table structure for table `sys_dict` */
 
 CREATE TABLE `sys_dict` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `type_id` bigint(20) NOT NULL COMMENT '字典类型',
-  `name` varchar(100) NOT NULL COMMENT '名称',
-  `code` varchar(20) DEFAULT NULL COMMENT '编码',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `sys_dict_forkey` (`type_id`)
+                            `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                            `type_id` bigint(20) NOT NULL COMMENT '字典类型',
+                            `name` varchar(100) NOT NULL COMMENT '名称',
+                            `code` varchar(20) DEFAULT NULL COMMENT '编码',
+                            `cp_id` bigint(20) DEFAULT NULL,
+                            PRIMARY KEY (`id`),
+                            KEY `sys_dict_forkey` (`type_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=193 DEFAULT CHARSET=utf8 COMMENT='字典';
 
 /*Data for the table `sys_dict` */
 
-insert  into `sys_dict`(`id`,`type_id`,`name`,`code`,`cp_id`) values 
+insert  into `sys_dict`(`id`,`type_id`,`name`,`code`,`cp_id`) values
 (3,1001,'请假申请','sp01',1),
 (8,1001,'用章申请','sp02',1),
 (9,1001,'调薪申请','sp03',1),
@@ -1157,16 +1159,16 @@ insert  into `sys_dict`(`id`,`type_id`,`name`,`code`,`cp_id`) values
 /*Table structure for table `sys_dict_type` */
 
 CREATE TABLE `sys_dict_type` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `name` varchar(50) NOT NULL COMMENT 'name',
-  `order_num` int(11) NOT NULL DEFAULT '0' COMMENT 'order_num',
-  `remark` varchar(300) DEFAULT NULL COMMENT 'remark',
-  PRIMARY KEY (`id`)
+                                 `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                 `name` varchar(50) NOT NULL COMMENT 'name',
+                                 `order_num` int(11) NOT NULL DEFAULT '0' COMMENT 'order_num',
+                                 `remark` varchar(300) DEFAULT NULL COMMENT 'remark',
+                                 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1028 DEFAULT CHARSET=utf8 COMMENT='字典类型';
 
 /*Data for the table `sys_dict_type` */
 
-insert  into `sys_dict_type`(`id`,`name`,`order_num`,`remark`) values 
+insert  into `sys_dict_type`(`id`,`name`,`order_num`,`remark`) values
 (1002,'房间区域',2,'房间的区域如：餐厅，卧室，厨房等'),
 (1003,'业务阶段',3,'整个项目的全阶段如：意向-》设计-》施工。。'),
 (1004,'业务类型',0,'客户选择的装修方式，如：全包，半包等'),
@@ -1182,20 +1184,20 @@ insert  into `sys_dict_type`(`id`,`name`,`order_num`,`remark`) values
 /*Table structure for table `sys_log` */
 
 CREATE TABLE `sys_log` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) DEFAULT NULL COMMENT '用户名',
-  `operation` varchar(50) DEFAULT NULL COMMENT '用户操作',
-  `method` varchar(200) DEFAULT NULL COMMENT '请求方法',
-  `params` varchar(5000) DEFAULT NULL COMMENT '请求参数',
-  `time` bigint(20) NOT NULL COMMENT '执行时长(毫秒)',
-  `ip` varchar(64) DEFAULT NULL COMMENT 'IP地址',
-  `create_date` datetime DEFAULT NULL COMMENT '创建时间',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=563 DEFAULT CHARSET=utf8 COMMENT='系统日志';
+                           `id` bigint(20) NOT NULL AUTO_INCREMENT,
+                           `username` varchar(50) DEFAULT NULL COMMENT '用户名',
+                           `operation` varchar(50) DEFAULT NULL COMMENT '用户操作',
+                           `method` varchar(200) DEFAULT NULL COMMENT '请求方法',
+                           `params` varchar(5000) DEFAULT NULL COMMENT '请求参数',
+                           `time` bigint(20) NOT NULL COMMENT '执行时长(毫秒)',
+                           `ip` varchar(64) DEFAULT NULL COMMENT 'IP地址',
+                           `create_date` datetime DEFAULT NULL COMMENT '创建时间',
+                           PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=564 DEFAULT CHARSET=utf8 COMMENT='系统日志';
 
 /*Data for the table `sys_log` */
 
-insert  into `sys_log`(`id`,`username`,`operation`,`method`,`params`,`time`,`ip`,`create_date`) values 
+insert  into `sys_log`(`id`,`username`,`operation`,`method`,`params`,`time`,`ip`,`create_date`) values
 (1,'admin','保存角色','io.ttn.modules.sys.controller.SysRoleController.save()','[{\"roleId\":1,\"roleName\":\"企业主\",\"remark\":\"企业拥有的所有权限\",\"createUserId\":1,\"menuIdList\":[2,15,16,17,18,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,-666666,1],\"createTime\":\"Oct 13, 2018 1:26:09 AM\"}]',102,'0:0:0:0:0:0:0:1','2018-10-13 01:26:09'),
 (2,'admin','保存角色','io.ttn.modules.sys.controller.SysRoleController.save()','[{\"roleId\":2,\"roleName\":\"销售\",\"remark\":\"\",\"createUserId\":1,\"menuIdList\":[-666666],\"createTime\":\"Oct 13, 2018 1:26:57 AM\"}]',6,'0:0:0:0:0:0:0:1','2018-10-13 01:26:58'),
 (3,'admin','保存角色','io.ttn.modules.sys.controller.SysRoleController.save()','[{\"roleId\":3,\"roleName\":\"设计师\",\"remark\":\"\",\"createUserId\":1,\"menuIdList\":[-666666],\"createTime\":\"Oct 13, 2018 1:27:03 AM\"}]',15,'0:0:0:0:0:0:0:1','2018-10-13 01:27:03'),
@@ -1757,27 +1759,28 @@ insert  into `sys_log`(`id`,`username`,`operation`,`method`,`params`,`time`,`ip`
 (559,'张三','修改用户','top.czttn.modules.sys.controller.SysUserController.update()','[{\"cpId\":1,\"email\":\"18988888888@163.com\",\"ifMain\":true,\"lastLoginTime\":\"2019-12-27 15:58:06.0\",\"userId\":10,\"deptId\":2,\"deptName\":\"综合管理部\",\"username\":\"张三\",\"password\":\"9ec9750e709431dad22365cabc5c625482e574c74adaebba7dd02f1129e4ce1d\",\"salt\":\"YzcmCZNvbXocrsz9dm8e\",\"mobile\":\"18988888888\",\"job\":\"CEO\",\"entry\":\"Oct 9, 2018 12:00:00 AM\",\"ifOn\":true,\"roleIdList\":[1],\"positionIdList\":[],\"createTime\":\"Feb 28, 2019 10:36:29 AM\"}]',16,'0:0:0:0:0:0:0:1','2019-12-27 16:02:26'),
 (560,'张三','修改用户','top.czttn.modules.sys.controller.SysUserController.update()','[{\"cpId\":1,\"email\":\"18912322255@163.com\",\"ifMain\":false,\"userId\":36,\"deptId\":2,\"deptName\":\"综合管理部\",\"username\":\"眭痴香\",\"password\":\"4bdeb7d5bc1b7d22245044f6fee47e7317cdea108a3d0a757abc08bb47db1e29\",\"salt\":\"EynRsDigFXL6idk4OBzW\",\"mobile\":\"18912322255\",\"job\":\"销售\",\"entry\":\"Nov 30, 2019 12:00:00 AM\",\"ifOn\":true,\"roleIdList\":[11],\"positionIdList\":[1],\"createTime\":\"Dec 27, 2019 4:01:51 PM\"}]',8,'0:0:0:0:0:0:0:1','2019-12-27 16:02:39'),
 (561,'张三','保存用户','top.czttn.modules.sys.controller.SysUserController.save()','[{\"cpId\":1,\"email\":\"18922222222@163.com\",\"ifMain\":false,\"userId\":37,\"deptId\":2,\"deptName\":\"综合管理部\",\"username\":\"牛景明\",\"password\":\"54a641f13ae1526ca717c310e7342fb2d3dd28cbc9f266a66f573868299862b6\",\"salt\":\"H9eIScbrGqC86JQhzrVK\",\"mobile\":\"18922222222\",\"job\":\"技术\",\"entry\":\"Nov 30, 2019 12:00:00 AM\",\"ifOn\":true,\"roleIdList\":[11],\"positionIdList\":[1],\"createTime\":\"Dec 27, 2019 4:03:29 PM\"}]',14,'0:0:0:0:0:0:0:1','2019-12-27 16:03:29'),
-(562,'张三','保存用户','top.czttn.modules.sys.controller.SysUserController.save()','[{\"cpId\":1,\"email\":\"18912355555@163.com\",\"ifMain\":false,\"userId\":38,\"deptId\":2,\"deptName\":\"综合管理部\",\"username\":\"呼玉树\",\"password\":\"db8b714c7fa9656ebf8d58568cbbc3bdcfc34124a1aa04798e6215228f514ca6\",\"salt\":\"iQJMrAgyzvyIY3XT7aiR\",\"mobile\":\"18912355555\",\"job\":\"销售\",\"entry\":\"Nov 30, 2019 12:00:00 AM\",\"ifOn\":true,\"roleIdList\":[11],\"positionIdList\":[1],\"createTime\":\"Dec 27, 2019 4:04:02 PM\"}]',14,'0:0:0:0:0:0:0:1','2019-12-27 16:04:03');
+(562,'张三','保存用户','top.czttn.modules.sys.controller.SysUserController.save()','[{\"cpId\":1,\"email\":\"18912355555@163.com\",\"ifMain\":false,\"userId\":38,\"deptId\":2,\"deptName\":\"综合管理部\",\"username\":\"呼玉树\",\"password\":\"db8b714c7fa9656ebf8d58568cbbc3bdcfc34124a1aa04798e6215228f514ca6\",\"salt\":\"iQJMrAgyzvyIY3XT7aiR\",\"mobile\":\"18912355555\",\"job\":\"销售\",\"entry\":\"Nov 30, 2019 12:00:00 AM\",\"ifOn\":true,\"roleIdList\":[11],\"positionIdList\":[1],\"createTime\":\"Dec 27, 2019 4:04:02 PM\"}]',14,'0:0:0:0:0:0:0:1','2019-12-27 16:04:03'),
+(563,'admin','修改密码','top.czttn.modules.sys.controller.SysUserController.password()','[{\"password\":\"xiao86ze\",\"newPassword\":\"admin\"}]',8,'0:0:0:0:0:0:0:1','2019-12-27 17:55:47');
 
 /*Table structure for table `sys_menu` */
 
 CREATE TABLE `sys_menu` (
-  `menu_id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `parent_id` bigint(20) DEFAULT NULL COMMENT '父菜单ID，一级菜单为0',
-  `name` varchar(50) DEFAULT NULL COMMENT '菜单名称',
-  `url` varchar(200) DEFAULT NULL COMMENT '菜单URL',
-  `perms` varchar(500) DEFAULT NULL COMMENT '授权(多个用逗号分隔，如：user:list,user:create)',
-  `type` int(11) DEFAULT NULL COMMENT '类型   0：目录   1：菜单   2：按钮',
-  `icon` varchar(50) DEFAULT NULL COMMENT '菜单图标',
-  `order_num` int(11) DEFAULT NULL COMMENT '排序',
-  `if_admin` int(11) NOT NULL DEFAULT '0' COMMENT '是否超级菜单',
-  `if_show` int(11) NOT NULL DEFAULT '1' COMMENT '普通用户导航是否显示',
-  PRIMARY KEY (`menu_id`)
+                            `menu_id` bigint(20) NOT NULL AUTO_INCREMENT,
+                            `parent_id` bigint(20) DEFAULT NULL COMMENT '父菜单ID，一级菜单为0',
+                            `name` varchar(50) DEFAULT NULL COMMENT '菜单名称',
+                            `url` varchar(200) DEFAULT NULL COMMENT '菜单URL',
+                            `perms` varchar(500) DEFAULT NULL COMMENT '授权(多个用逗号分隔，如：user:list,user:create)',
+                            `type` int(11) DEFAULT NULL COMMENT '类型   0：目录   1：菜单   2：按钮',
+                            `icon` varchar(50) DEFAULT NULL COMMENT '菜单图标',
+                            `order_num` int(11) DEFAULT NULL COMMENT '排序',
+                            `if_admin` int(11) NOT NULL DEFAULT '0' COMMENT '是否超级菜单',
+                            `if_show` int(11) NOT NULL DEFAULT '1' COMMENT '普通用户导航是否显示',
+                            PRIMARY KEY (`menu_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=269 DEFAULT CHARSET=utf8 COMMENT='菜单管理';
 
 /*Data for the table `sys_menu` */
 
-insert  into `sys_menu`(`menu_id`,`parent_id`,`name`,`url`,`perms`,`type`,`icon`,`order_num`,`if_admin`,`if_show`) values 
+insert  into `sys_menu`(`menu_id`,`parent_id`,`name`,`url`,`perms`,`type`,`icon`,`order_num`,`if_admin`,`if_show`) values
 (1,0,'系统管理',NULL,NULL,0,'system',102,1,1),
 (3,187,'功能菜单分配','sys/role',NULL,1,'role',2,2,1),
 (4,1,'菜单管理','sys/menu',NULL,1,'menu',3,1,1),
@@ -1982,15 +1985,15 @@ insert  into `sys_menu`(`menu_id`,`parent_id`,`name`,`url`,`perms`,`type`,`icon`
 /*Table structure for table `sys_oss` */
 
 CREATE TABLE `sys_oss` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `url` varchar(200) DEFAULT NULL COMMENT 'URL地址',
-  `create_date` datetime DEFAULT NULL COMMENT '创建时间',
-  PRIMARY KEY (`id`)
+                           `id` bigint(20) NOT NULL AUTO_INCREMENT,
+                           `url` varchar(200) DEFAULT NULL COMMENT 'URL地址',
+                           `create_date` datetime DEFAULT NULL COMMENT '创建时间',
+                           PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8 COMMENT='文件上传';
 
 /*Data for the table `sys_oss` */
 
-insert  into `sys_oss`(`id`,`url`,`create_date`) values 
+insert  into `sys_oss`(`id`,`url`,`create_date`) values
 (1,'http://www.czttn.top/20190218/b519142e49744633861fad6685a3c822.png','2019-02-18 16:36:54'),
 (2,'http://www.czttn.top/20190218/9b22a4fbc4a043e4a35548157fc1bed2.png','2019-02-18 16:37:04'),
 (3,'http://ttn-decoration.oss-cn-beijing.aliyuncs.com/20190218/2d37bd6e7fc241519729536aa5ac45df.png','2019-02-18 16:42:50'),
@@ -2034,18 +2037,18 @@ insert  into `sys_oss`(`id`,`url`,`create_date`) values
 /*Table structure for table `sys_position` */
 
 CREATE TABLE `sys_position` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `name` varchar(50) NOT NULL COMMENT '岗位名称',
-  `if_on` tinyint(1) NOT NULL COMMENT '是否启用',
-  `description` varchar(100) DEFAULT NULL COMMENT '服务岗位描述',
-  `cp_id` bigint(20) DEFAULT NULL,
-  `if_common` int(11) NOT NULL DEFAULT '0' COMMENT '是否基础数据',
-  PRIMARY KEY (`id`)
+                                `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                `name` varchar(50) NOT NULL COMMENT '岗位名称',
+                                `if_on` tinyint(1) NOT NULL COMMENT '是否启用',
+                                `description` varchar(100) DEFAULT NULL COMMENT '服务岗位描述',
+                                `cp_id` bigint(20) DEFAULT NULL,
+                                `if_common` int(11) NOT NULL DEFAULT '0' COMMENT '是否基础数据',
+                                PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COMMENT='公司职位';
 
 /*Data for the table `sys_position` */
 
-insert  into `sys_position`(`id`,`name`,`if_on`,`description`,`cp_id`,`if_common`) values 
+insert  into `sys_position`(`id`,`name`,`if_on`,`description`,`cp_id`,`if_common`) values
 (1,'销售',1,'销售岗位',1,0),
 (2,'设计师',0,'设计图纸',1,0),
 (3,'项目经理',1,'管控项目质量和进度',1,0),
@@ -2072,37 +2075,37 @@ insert  into `sys_position`(`id`,`name`,`if_on`,`description`,`cp_id`,`if_common
 /*Table structure for table `sys_retired` */
 
 CREATE TABLE `sys_retired` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `name` varchar(20) NOT NULL COMMENT '姓名',
-  `phone` varchar(20) NOT NULL COMMENT '手机号',
-  `entry_time` datetime NOT NULL COMMENT '入职日期',
-  `job` varchar(20) NOT NULL COMMENT '公司职位',
-  `cp_id` bigint(20) DEFAULT NULL COMMENT '所属公司',
-  PRIMARY KEY (`id`)
+                               `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                               `name` varchar(20) NOT NULL COMMENT '姓名',
+                               `phone` varchar(20) NOT NULL COMMENT '手机号',
+                               `entry_time` datetime NOT NULL COMMENT '入职日期',
+                               `job` varchar(20) NOT NULL COMMENT '公司职位',
+                               `cp_id` bigint(20) DEFAULT NULL COMMENT '所属公司',
+                               PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='离职员工';
 
 /*Data for the table `sys_retired` */
 
-insert  into `sys_retired`(`id`,`name`,`phone`,`entry_time`,`job`,`cp_id`) values 
+insert  into `sys_retired`(`id`,`name`,`phone`,`entry_time`,`job`,`cp_id`) values
 (2,'测试','18912322277','2019-03-18 00:00:00','测试',1),
 (4,'换','12222222222','2019-03-05 00:00:00','测试',1);
 
 /*Table structure for table `sys_role` */
 
 CREATE TABLE `sys_role` (
-  `role_id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `role_name` varchar(100) DEFAULT NULL COMMENT '角色名称',
-  `remark` varchar(100) DEFAULT NULL COMMENT '备注',
-  `create_user_id` bigint(20) DEFAULT NULL COMMENT '创建者ID',
-  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-  `cp_id` bigint(20) DEFAULT NULL,
-  `if_common` int(11) NOT NULL DEFAULT '0' COMMENT '是否为通用数据',
-  PRIMARY KEY (`role_id`)
+                            `role_id` bigint(20) NOT NULL AUTO_INCREMENT,
+                            `role_name` varchar(100) DEFAULT NULL COMMENT '角色名称',
+                            `remark` varchar(100) DEFAULT NULL COMMENT '备注',
+                            `create_user_id` bigint(20) DEFAULT NULL COMMENT '创建者ID',
+                            `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+                            `cp_id` bigint(20) DEFAULT NULL,
+                            `if_common` int(11) NOT NULL DEFAULT '0' COMMENT '是否为通用数据',
+                            PRIMARY KEY (`role_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8 COMMENT='角色';
 
 /*Data for the table `sys_role` */
 
-insert  into `sys_role`(`role_id`,`role_name`,`remark`,`create_user_id`,`create_time`,`cp_id`,`if_common`) values 
+insert  into `sys_role`(`role_id`,`role_name`,`remark`,`create_user_id`,`create_time`,`cp_id`,`if_common`) values
 (1,'一级','企业拥有的部分权限，新增用户权限',1,'2018-10-13 01:26:09',NULL,0),
 (9,'二级','企业拥有部分权限，包括新增用户',1,'2019-02-28 10:16:29',NULL,0),
 (10,'超管','所有权限',1,'2019-02-28 10:17:26',NULL,0),
@@ -2127,15 +2130,15 @@ insert  into `sys_role`(`role_id`,`role_name`,`remark`,`create_user_id`,`create_
 /*Table structure for table `sys_role_menu` */
 
 CREATE TABLE `sys_role_menu` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `role_id` bigint(20) DEFAULT NULL COMMENT '角色ID',
-  `menu_id` bigint(20) DEFAULT NULL COMMENT '菜单ID',
-  PRIMARY KEY (`id`)
+                                 `id` bigint(20) NOT NULL AUTO_INCREMENT,
+                                 `role_id` bigint(20) DEFAULT NULL COMMENT '角色ID',
+                                 `menu_id` bigint(20) DEFAULT NULL COMMENT '菜单ID',
+                                 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3077 DEFAULT CHARSET=utf8 COMMENT='角色与菜单对应关系';
 
 /*Data for the table `sys_role_menu` */
 
-insert  into `sys_role_menu`(`id`,`role_id`,`menu_id`) values 
+insert  into `sys_role_menu`(`id`,`role_id`,`menu_id`) values
 (772,11,186),
 (773,11,56),
 (774,11,57),
@@ -2917,28 +2920,28 @@ insert  into `sys_role_menu`(`id`,`role_id`,`menu_id`) values
 /*Table structure for table `sys_user` */
 
 CREATE TABLE `sys_user` (
-  `user_id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `dept_id` bigint(20) DEFAULT NULL,
-  `username` varchar(50) NOT NULL COMMENT '用户名',
-  `password` varchar(100) DEFAULT NULL COMMENT '密码',
-  `salt` varchar(20) DEFAULT NULL COMMENT '盐',
-  `mobile` varchar(100) DEFAULT NULL COMMENT '手机号',
-  `job` varchar(100) DEFAULT NULL,
-  `entry` date DEFAULT NULL COMMENT '入职时间',
-  `if_on` tinyint(1) DEFAULT NULL,
-  `cp_id` bigint(20) DEFAULT NULL,
-  `if_main` tinyint(1) NOT NULL DEFAULT '0',
-  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-  `email` varchar(128) DEFAULT NULL COMMENT '邮箱',
-  `last_login_time` datetime DEFAULT NULL,
-  PRIMARY KEY (`user_id`)
+                            `user_id` bigint(20) NOT NULL AUTO_INCREMENT,
+                            `dept_id` bigint(20) DEFAULT NULL,
+                            `username` varchar(50) NOT NULL COMMENT '用户名',
+                            `password` varchar(100) DEFAULT NULL COMMENT '密码',
+                            `salt` varchar(20) DEFAULT NULL COMMENT '盐',
+                            `mobile` varchar(100) DEFAULT NULL COMMENT '手机号',
+                            `job` varchar(100) DEFAULT NULL,
+                            `entry` date DEFAULT NULL COMMENT '入职时间',
+                            `if_on` tinyint(1) DEFAULT NULL,
+                            `cp_id` bigint(20) DEFAULT NULL,
+                            `if_main` tinyint(1) NOT NULL DEFAULT '0',
+                            `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+                            `email` varchar(128) DEFAULT NULL COMMENT '邮箱',
+                            `last_login_time` datetime DEFAULT NULL,
+                            PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8 COMMENT='系统用户';
 
 /*Data for the table `sys_user` */
 
-insert  into `sys_user`(`user_id`,`dept_id`,`username`,`password`,`salt`,`mobile`,`job`,`entry`,`if_on`,`cp_id`,`if_main`,`create_time`,`email`,`last_login_time`) values 
-(1,9,'admin','6a1bc2a8a3e473a3ff2f62c053b3a79e4b2db226046fd0e0df7be6869fb27760','YzcmCZNvbXocrsz9dm8e','czczj','超管','2018-10-23',1,NULL,0,'2019-02-28 10:36:24',NULL,NULL),
-(10,2,'张三','9ec9750e709431dad22365cabc5c625482e574c74adaebba7dd02f1129e4ce1d','YzcmCZNvbXocrsz9dm8e','18988888888','CEO','2018-10-09',1,1,1,'2019-02-28 10:36:29','18988888888@163.com','2019-12-27 15:58:06'),
+insert  into `sys_user`(`user_id`,`dept_id`,`username`,`password`,`salt`,`mobile`,`job`,`entry`,`if_on`,`cp_id`,`if_main`,`create_time`,`email`,`last_login_time`) values
+(1,9,'admin','9ec9750e709431dad22365cabc5c625482e574c74adaebba7dd02f1129e4ce1d','YzcmCZNvbXocrsz9dm8e','czczj','超管','2018-10-23',1,NULL,0,'2019-02-28 10:36:24',NULL,NULL),
+(10,2,'张三','9ec9750e709431dad22365cabc5c625482e574c74adaebba7dd02f1129e4ce1d','YzcmCZNvbXocrsz9dm8e','18988888888','CEO','2018-10-09',1,1,1,'2019-02-28 10:36:29','18988888888@163.com','2019-12-27 17:58:46'),
 (24,10,'Mr.Yip','12e416902db93462bf888e3dc0792be42ecd8a54a6c8ca63ba68cdd35947da15','YzcmCZNvbXocrsz9dm8e','18042335123','ceo',NULL,1,2,1,'2019-05-05 13:40:03',NULL,NULL),
 (31,22,'bcd7d','b5060a9a553ff972f7c3288f418232e86b5c0ae466be726f762fc6749e8aee5b','iM53Fzcn9pJZ0FFOMxdq',NULL,NULL,NULL,1,7,1,'2019-07-09 10:39:22','2651782252@qq.com','2019-07-09 11:10:56'),
 (32,23,'c5fa7','e1e2680fa344c795022ff8e0f6683170e742b50f21677e6d82e238147e3ef85a','WmP4S0pMx7vCJJtqVtM4',NULL,NULL,NULL,1,8,1,'2019-07-09 11:12:51','2651782253@qq.com','2019-07-09 17:05:19'),
@@ -2952,16 +2955,16 @@ insert  into `sys_user`(`user_id`,`dept_id`,`username`,`password`,`salt`,`mobile
 /*Table structure for table `sys_user_position` */
 
 CREATE TABLE `sys_user_position` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `user_id` bigint(20) NOT NULL,
-  `position_id` bigint(20) NOT NULL,
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                                     `id` bigint(20) NOT NULL AUTO_INCREMENT,
+                                     `user_id` bigint(20) NOT NULL,
+                                     `position_id` bigint(20) NOT NULL,
+                                     `cp_id` bigint(20) DEFAULT NULL,
+                                     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8;
 
 /*Data for the table `sys_user_position` */
 
-insert  into `sys_user_position`(`id`,`user_id`,`position_id`,`cp_id`) values 
+insert  into `sys_user_position`(`id`,`user_id`,`position_id`,`cp_id`) values
 (36,20,1,NULL),
 (37,20,3,NULL),
 (51,17,3,NULL),
@@ -2979,15 +2982,15 @@ insert  into `sys_user_position`(`id`,`user_id`,`position_id`,`cp_id`) values
 /*Table structure for table `sys_user_role` */
 
 CREATE TABLE `sys_user_role` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `user_id` bigint(20) DEFAULT NULL COMMENT '用户ID',
-  `role_id` bigint(20) DEFAULT NULL COMMENT '角色ID',
-  PRIMARY KEY (`id`)
+                                 `id` bigint(20) NOT NULL AUTO_INCREMENT,
+                                 `user_id` bigint(20) DEFAULT NULL COMMENT '用户ID',
+                                 `role_id` bigint(20) DEFAULT NULL COMMENT '角色ID',
+                                 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8 COMMENT='用户与角色对应关系';
 
 /*Data for the table `sys_user_role` */
 
-insert  into `sys_user_role`(`id`,`user_id`,`role_id`) values 
+insert  into `sys_user_role`(`id`,`user_id`,`role_id`) values
 (16,NULL,1),
 (70,1,10),
 (93,30,20),
@@ -3007,19 +3010,19 @@ insert  into `sys_user_role`(`id`,`user_id`,`role_id`) values
 /*Table structure for table `sys_user_token` */
 
 CREATE TABLE `sys_user_token` (
-  `user_id` bigint(20) NOT NULL,
-  `token` varchar(100) NOT NULL COMMENT 'token',
-  `expire_time` datetime DEFAULT NULL COMMENT '过期时间',
-  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
-  PRIMARY KEY (`user_id`),
-  UNIQUE KEY `token` (`token`)
+                                  `user_id` bigint(20) NOT NULL,
+                                  `token` varchar(100) NOT NULL COMMENT 'token',
+                                  `expire_time` datetime DEFAULT NULL COMMENT '过期时间',
+                                  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+                                  PRIMARY KEY (`user_id`),
+                                  UNIQUE KEY `token` (`token`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='系统用户Token';
 
 /*Data for the table `sys_user_token` */
 
-insert  into `sys_user_token`(`user_id`,`token`,`expire_time`,`update_time`) values 
-(1,'935a4d826283bc0b6d97ae63034e3cd8','2019-12-28 04:05:43','2019-12-27 16:05:43'),
-(10,'e470a92e4414097c60510ddb8e60af64','2019-12-28 03:58:06','2019-12-27 15:58:06'),
+insert  into `sys_user_token`(`user_id`,`token`,`expire_time`,`update_time`) values
+(1,'8ac90427d5a66201fba7ac524c44b578','2019-12-28 05:55:55','2019-12-27 17:55:55'),
+(10,'d0d6091469de1736869ae226a9ae3be0','2019-12-28 05:58:47','2019-12-27 17:58:47'),
 (18,'6cfa56dbbeefe5cfd068531049f2eeec','2019-03-06 11:00:32','2019-03-05 23:00:32'),
 (19,'3314bfcee73adb60d7397fa68f6c2fc7','2019-03-20 03:45:43','2019-03-19 15:45:43'),
 (20,'ca2a06d2492579b74287ade532a4efb7','2019-03-08 02:40:30','2019-03-07 14:40:30'),
@@ -3034,86 +3037,86 @@ insert  into `sys_user_token`(`user_id`,`token`,`expire_time`,`update_time`) val
 /*Table structure for table `sys_user_view` */
 
 CREATE TABLE `sys_user_view` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `user_id` bigint(20) NOT NULL,
-  `view_id` bigint(20) NOT NULL,
-  PRIMARY KEY (`id`)
+                                 `id` bigint(20) NOT NULL AUTO_INCREMENT,
+                                 `user_id` bigint(20) NOT NULL,
+                                 `view_id` bigint(20) NOT NULL,
+                                 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COMMENT='个人视野';
 
 /*Data for the table `sys_user_view` */
 
-insert  into `sys_user_view`(`id`,`user_id`,`view_id`) values 
+insert  into `sys_user_view`(`id`,`user_id`,`view_id`) values
 (21,10,10);
 
 /*Table structure for table `sys_version` */
 
 CREATE TABLE `sys_version` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `version` varchar(128) DEFAULT NULL COMMENT '版本号',
-  `update_time` date DEFAULT NULL COMMENT '更新时间',
-  `description` varchar(256) DEFAULT NULL COMMENT '更新描述',
-  `win32_href` varchar(128) DEFAULT NULL COMMENT 'win32更新包',
-  `win64_href` varchar(128) DEFAULT NULL COMMENT 'win64更新包',
-  `mac_href` varchar(128) DEFAULT NULL COMMENT 'mac更新包',
-  PRIMARY KEY (`id`)
+                               `id` bigint(20) NOT NULL AUTO_INCREMENT,
+                               `version` varchar(128) DEFAULT NULL COMMENT '版本号',
+                               `update_time` date DEFAULT NULL COMMENT '更新时间',
+                               `description` varchar(256) DEFAULT NULL COMMENT '更新描述',
+                               `win32_href` varchar(128) DEFAULT NULL COMMENT 'win32更新包',
+                               `win64_href` varchar(128) DEFAULT NULL COMMENT 'win64更新包',
+                               `mac_href` varchar(128) DEFAULT NULL COMMENT 'mac更新包',
+                               PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 /*Data for the table `sys_version` */
 
-insert  into `sys_version`(`id`,`version`,`update_time`,`description`,`win32_href`,`win64_href`,`mac_href`) values 
+insert  into `sys_version`(`id`,`version`,`update_time`,`description`,`win32_href`,`win64_href`,`mac_href`) values
 (1,'1.0.0','2019-07-08','第一个正式版本','https://ttn-package.oss-cn-hangzhou.aliyuncs.com/erp/decoration-client%20Setup%201.0.0.exe','https://ttn-package.oss-cn-hangzhou.aliyuncs.com/erp/decoration-client%20Setup%201.0.0.exe','https://ttn-package.oss-cn-hangzhou.aliyuncs.com/erp/decoration-client%20Setup%201.0.0.exe');
 
 /*Table structure for table `tb_user` */
 
 CREATE TABLE `tb_user` (
-  `user_id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) NOT NULL COMMENT '用户名',
-  `mobile` varchar(20) NOT NULL COMMENT '手机号',
-  `password` varchar(64) DEFAULT NULL COMMENT '密码',
-  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-  PRIMARY KEY (`user_id`),
-  UNIQUE KEY `username` (`username`)
+                           `user_id` bigint(20) NOT NULL AUTO_INCREMENT,
+                           `username` varchar(50) NOT NULL COMMENT '用户名',
+                           `mobile` varchar(20) NOT NULL COMMENT '手机号',
+                           `password` varchar(64) DEFAULT NULL COMMENT '密码',
+                           `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+                           PRIMARY KEY (`user_id`),
+                           UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='用户';
 
 /*Data for the table `tb_user` */
 
-insert  into `tb_user`(`user_id`,`username`,`mobile`,`password`,`create_time`) values 
+insert  into `tb_user`(`user_id`,`username`,`mobile`,`password`,`create_time`) values
 (1,'mark','13612345678','8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918','2017-03-23 22:37:41');
 
 /*Table structure for table `tx_accept_templet` */
 
 CREATE TABLE `tx_accept_templet` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `accept_type` bigint(20) NOT NULL COMMENT '验收类别',
-  `project_id` bigint(20) NOT NULL COMMENT '验收项目',
-  `standard` varchar(300) NOT NULL COMMENT '标准',
-  `if_must` tinyint(1) NOT NULL COMMENT '是否必检',
-  `picture_json` text COMMENT '标准图片_json',
-  `name` varchar(255) DEFAULT NULL COMMENT '模板名称',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_Reference_8tx` (`accept_type`)
+                                     `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                     `accept_type` bigint(20) NOT NULL COMMENT '验收类别',
+                                     `project_id` bigint(20) NOT NULL COMMENT '验收项目',
+                                     `standard` varchar(300) NOT NULL COMMENT '标准',
+                                     `if_must` tinyint(1) NOT NULL COMMENT '是否必检',
+                                     `picture_json` text COMMENT '标准图片_json',
+                                     `name` varchar(255) DEFAULT NULL COMMENT '模板名称',
+                                     `cp_id` bigint(20) DEFAULT NULL,
+                                     PRIMARY KEY (`id`),
+                                     KEY `FK_Reference_8tx` (`accept_type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='验收模板';
 
 /*Data for the table `tx_accept_templet` */
 
-insert  into `tx_accept_templet`(`id`,`accept_type`,`project_id`,`standard`,`if_must`,`picture_json`,`name`,`cp_id`) values 
+insert  into `tx_accept_templet`(`id`,`accept_type`,`project_id`,`standard`,`if_must`,`picture_json`,`name`,`cp_id`) values
 (1,1,2,'完整对齐，无脱落',1,NULL,NULL,NULL);
 
 /*Table structure for table `tx_accept_type` */
 
 CREATE TABLE `tx_accept_type` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `name` varchar(50) NOT NULL COMMENT '名称',
-  `if_on` tinyint(1) NOT NULL COMMENT '是否启用',
-  `remark` varchar(300) DEFAULT NULL COMMENT '备注',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                                  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                  `name` varchar(50) NOT NULL COMMENT '名称',
+                                  `if_on` tinyint(1) NOT NULL COMMENT '是否启用',
+                                  `remark` varchar(300) DEFAULT NULL COMMENT '备注',
+                                  `cp_id` bigint(20) DEFAULT NULL,
+                                  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='验收类别';
 
 /*Data for the table `tx_accept_type` */
 
-insert  into `tx_accept_type`(`id`,`name`,`if_on`,`remark`,`cp_id`) values 
+insert  into `tx_accept_type`(`id`,`name`,`if_on`,`remark`,`cp_id`) values
 (1,'验收第一步',1,'第一步备注',NULL),
 (2,'示例：瓷砖铺设',1,'验收类别，瓷砖铺设',1),
 (3,'示例：水电铺设',1,NULL,1),
@@ -3122,42 +3125,42 @@ insert  into `tx_accept_type`(`id`,`name`,`if_on`,`remark`,`cp_id`) values
 /*Table structure for table `tx_attendance` */
 
 CREATE TABLE `tx_attendance` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `name` varchar(20) NOT NULL COMMENT '考勤点名称',
-  `address` varchar(100) NOT NULL COMMENT '考勤点地址',
-  `error_range` decimal(10,0) DEFAULT NULL COMMENT '误差范围',
-  `start_time` varchar(10) DEFAULT NULL COMMENT '上班时间',
-  `end_time` varchar(10) DEFAULT NULL COMMENT '下班时间',
-  `applicable` varchar(1000) DEFAULT NULL COMMENT '适用部门',
-  `estart_time` varchar(10) DEFAULT NULL COMMENT '最早打卡时',
-  `eend_time` varchar(10) DEFAULT NULL COMMENT '最晚打卡时',
-  `lgt` float DEFAULT NULL COMMENT '考勤点经度',
-  `lat` float DEFAULT NULL COMMENT '考勤点维度',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                                 `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                 `name` varchar(20) NOT NULL COMMENT '考勤点名称',
+                                 `address` varchar(100) NOT NULL COMMENT '考勤点地址',
+                                 `error_range` decimal(10,0) DEFAULT NULL COMMENT '误差范围',
+                                 `start_time` varchar(10) DEFAULT NULL COMMENT '上班时间',
+                                 `end_time` varchar(10) DEFAULT NULL COMMENT '下班时间',
+                                 `applicable` varchar(1000) DEFAULT NULL COMMENT '适用部门',
+                                 `estart_time` varchar(10) DEFAULT NULL COMMENT '最早打卡时',
+                                 `eend_time` varchar(10) DEFAULT NULL COMMENT '最晚打卡时',
+                                 `lgt` float DEFAULT NULL COMMENT '考勤点经度',
+                                 `lat` float DEFAULT NULL COMMENT '考勤点维度',
+                                 `cp_id` bigint(20) DEFAULT NULL,
+                                 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='考勤管理';
 
 /*Data for the table `tx_attendance` */
 
-insert  into `tx_attendance`(`id`,`name`,`address`,`error_range`,`start_time`,`end_time`,`applicable`,`estart_time`,`eend_time`,`lgt`,`lat`,`cp_id`) values 
+insert  into `tx_attendance`(`id`,`name`,`address`,`error_range`,`start_time`,`end_time`,`applicable`,`estart_time`,`eend_time`,`lgt`,`lat`,`cp_id`) values
 (1,'武进','湖塘武宜中路188号',300,'08:30','10:00',NULL,'01:00','02:00',119.948,31.7333,1),
 (2,'公司','江苏省常州市武进区湖塘创研港3(510大道东50米)',100,'09:00','18:00',NULL,'00:30','23:30',119.975,31.6866,1);
 
 /*Table structure for table `tx_brand` */
 
 CREATE TABLE `tx_brand` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `type_id` bigint(20) DEFAULT NULL,
-  `name` varchar(50) NOT NULL COMMENT '名称',
-  `picture_url` longtext COMMENT '图片_url',
-  `remark` varchar(300) DEFAULT NULL COMMENT '备注',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                            `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                            `type_id` bigint(20) DEFAULT NULL,
+                            `name` varchar(50) NOT NULL COMMENT '名称',
+                            `picture_url` longtext COMMENT '图片_url',
+                            `remark` varchar(300) DEFAULT NULL COMMENT '备注',
+                            `cp_id` bigint(20) DEFAULT NULL,
+                            PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='品牌维护';
 
 /*Data for the table `tx_brand` */
 
-insert  into `tx_brand`(`id`,`type_id`,`name`,`picture_url`,`remark`,`cp_id`) values 
+insert  into `tx_brand`(`id`,`type_id`,`name`,`picture_url`,`remark`,`cp_id`) values
 (1,1,'ces','ces',NULL,1),
 (2,1,'cc','cc','cc',1),
 (3,1,'c','c','c',1),
@@ -3173,45 +3176,45 @@ insert  into `tx_brand`(`id`,`type_id`,`name`,`picture_url`,`remark`,`cp_id`) va
 /*Table structure for table `tx_client` */
 
 CREATE TABLE `tx_client` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `belong_id` bigint(20) DEFAULT NULL COMMENT '所属人',
-  `client_name` varchar(20) NOT NULL COMMENT '客户姓名',
-  `phone` varchar(20) NOT NULL COMMENT '客户电话',
-  `client_code` varchar(20) DEFAULT NULL COMMENT '客户编码',
-  `sex` varchar(5) DEFAULT NULL COMMENT '性别',
-  `address` varchar(200) DEFAULT NULL COMMENT '地址',
-  `bus_type` varchar(10) DEFAULT NULL COMMENT '业务类型',
-  `bus_phase` varchar(10) DEFAULT NULL COMMENT '阶段',
-  `room_type` varchar(10) DEFAULT NULL COMMENT '户型',
-  `house_type` varchar(10) DEFAULT NULL COMMENT '房型',
-  `create_man` varchar(20) DEFAULT NULL COMMENT '创建人',
-  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-  `useful_area` decimal(10,0) DEFAULT NULL COMMENT '实用面积',
-  `status` varchar(10) DEFAULT NULL COMMENT '所处状态',
-  `buid_area` decimal(10,0) DEFAULT NULL COMMENT '建筑面积',
-  `receive_time` datetime DEFAULT NULL COMMENT '领取时间',
-  `source` varchar(10) DEFAULT NULL COMMENT '数据来源',
-  `open_see` varchar(10) DEFAULT NULL COMMENT '所属公海',
-  `client_type` varchar(10) DEFAULT NULL COMMENT '客户类型',
-  `escape` varchar(255) DEFAULT NULL COMMENT '逃单描述',
-  `hope_amount` decimal(10,0) DEFAULT NULL COMMENT '期望签单金额',
-  `hope_time` datetime DEFAULT NULL COMMENT '期望签单日期',
-  `contract_amount` decimal(10,0) DEFAULT NULL COMMENT '合同金额',
-  `paid_amount` decimal(10,0) DEFAULT NULL COMMENT '已收款',
-  `unfollwed_days` int(11) DEFAULT NULL COMMENT '未跟进天数',
-  `community` varchar(100) DEFAULT NULL COMMENT '小区',
-  `roof` varchar(20) DEFAULT NULL COMMENT '栋',
-  `unit` varchar(20) DEFAULT NULL COMMENT '单位',
-  `doorplate` varchar(20) DEFAULT NULL COMMENT '门牌',
-  `reserve_time` datetime DEFAULT NULL COMMENT '预约时间',
-  `receive_count` int(11) DEFAULT '0' COMMENT '领取次数',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                             `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                             `belong_id` bigint(20) DEFAULT NULL COMMENT '所属人',
+                             `client_name` varchar(20) NOT NULL COMMENT '客户姓名',
+                             `phone` varchar(20) NOT NULL COMMENT '客户电话',
+                             `client_code` varchar(20) DEFAULT NULL COMMENT '客户编码',
+                             `sex` varchar(5) DEFAULT NULL COMMENT '性别',
+                             `address` varchar(200) DEFAULT NULL COMMENT '地址',
+                             `bus_type` varchar(10) DEFAULT NULL COMMENT '业务类型',
+                             `bus_phase` varchar(10) DEFAULT NULL COMMENT '阶段',
+                             `room_type` varchar(10) DEFAULT NULL COMMENT '户型',
+                             `house_type` varchar(10) DEFAULT NULL COMMENT '房型',
+                             `create_man` varchar(20) DEFAULT NULL COMMENT '创建人',
+                             `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+                             `useful_area` decimal(10,0) DEFAULT NULL COMMENT '实用面积',
+                             `status` varchar(10) DEFAULT NULL COMMENT '所处状态',
+                             `buid_area` decimal(10,0) DEFAULT NULL COMMENT '建筑面积',
+                             `receive_time` datetime DEFAULT NULL COMMENT '领取时间',
+                             `source` varchar(10) DEFAULT NULL COMMENT '数据来源',
+                             `open_see` varchar(10) DEFAULT NULL COMMENT '所属公海',
+                             `client_type` varchar(10) DEFAULT NULL COMMENT '客户类型',
+                             `escape` varchar(255) DEFAULT NULL COMMENT '逃单描述',
+                             `hope_amount` decimal(10,0) DEFAULT NULL COMMENT '期望签单金额',
+                             `hope_time` datetime DEFAULT NULL COMMENT '期望签单日期',
+                             `contract_amount` decimal(10,0) DEFAULT NULL COMMENT '合同金额',
+                             `paid_amount` decimal(10,0) DEFAULT NULL COMMENT '已收款',
+                             `unfollwed_days` int(11) DEFAULT NULL COMMENT '未跟进天数',
+                             `community` varchar(100) DEFAULT NULL COMMENT '小区',
+                             `roof` varchar(20) DEFAULT NULL COMMENT '栋',
+                             `unit` varchar(20) DEFAULT NULL COMMENT '单位',
+                             `doorplate` varchar(20) DEFAULT NULL COMMENT '门牌',
+                             `reserve_time` datetime DEFAULT NULL COMMENT '预约时间',
+                             `receive_count` int(11) DEFAULT '0' COMMENT '领取次数',
+                             `cp_id` bigint(20) DEFAULT NULL,
+                             PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COMMENT='我的客户';
 
 /*Data for the table `tx_client` */
 
-insert  into `tx_client`(`id`,`belong_id`,`client_name`,`phone`,`client_code`,`sex`,`address`,`bus_type`,`bus_phase`,`room_type`,`house_type`,`create_man`,`create_time`,`useful_area`,`status`,`buid_area`,`receive_time`,`source`,`open_see`,`client_type`,`escape`,`hope_amount`,`hope_time`,`contract_amount`,`paid_amount`,`unfollwed_days`,`community`,`roof`,`unit`,`doorplate`,`reserve_time`,`receive_count`,`cp_id`) values 
+insert  into `tx_client`(`id`,`belong_id`,`client_name`,`phone`,`client_code`,`sex`,`address`,`bus_type`,`bus_phase`,`room_type`,`house_type`,`create_man`,`create_time`,`useful_area`,`status`,`buid_area`,`receive_time`,`source`,`open_see`,`client_type`,`escape`,`hope_amount`,`hope_time`,`contract_amount`,`paid_amount`,`unfollwed_days`,`community`,`roof`,`unit`,`doorplate`,`reserve_time`,`receive_count`,`cp_id`) values
 (2,1,'王五','18788889999','MY2221','2','中海凤凰熙岸','43','32','161','89',NULL,NULL,100,'1',200,'2019-01-28 17:33:54','49',NULL,'61','测试',20000,'2019-01-21 17:22:10',30000,30000,1,'1','1','2','1',NULL,3,1),
 (3,1,'火舞','18222222222','MY99921','1','中吴大道1095','43','32','160','90','admin','2019-01-28 14:47:37',100,'1',118,'2019-01-28 14:47:04','48',NULL,'61',NULL,100,'2019-01-28 14:47:20',100000,50000,10,'1','1','1','1',NULL,1,1),
 (4,1,'恐惧','18222201110',NULL,'1','ces','44','32','162','91','admin','2019-01-28 15:53:33',44,NULL,43,'2019-01-28 23:45:27','53',NULL,'60',NULL,444,'2019-01-28 16:07:36',NULL,NULL,NULL,'1','1','1','1',NULL,2,1),
@@ -3235,13 +3238,13 @@ insert  into `tx_client`(`id`,`belong_id`,`client_name`,`phone`,`client_code`,`s
 /*Table structure for table `tx_client_info` */
 
 CREATE TABLE `tx_client_info` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `client_id` bigint(20) DEFAULT NULL COMMENT '客户id',
-  `create_time` datetime NOT NULL COMMENT '时间',
-  `client_action` varchar(20) NOT NULL COMMENT '动作',
-  `content` varchar(50) DEFAULT NULL COMMENT '内容',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                                  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                  `client_id` bigint(20) DEFAULT NULL COMMENT '客户id',
+                                  `create_time` datetime NOT NULL COMMENT '时间',
+                                  `client_action` varchar(20) NOT NULL COMMENT '动作',
+                                  `content` varchar(50) DEFAULT NULL COMMENT '内容',
+                                  `cp_id` bigint(20) DEFAULT NULL,
+                                  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='客户记录';
 
 /*Data for the table `tx_client_info` */
@@ -3249,17 +3252,17 @@ CREATE TABLE `tx_client_info` (
 /*Table structure for table `tx_client_pre` */
 
 CREATE TABLE `tx_client_pre` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `client_id` bigint(20) DEFAULT NULL COMMENT '客户id',
-  `client_name` varchar(50) DEFAULT NULL COMMENT '客户名称',
-  `phone` varchar(50) DEFAULT NULL COMMENT '联系电话',
-  `pre_time` datetime DEFAULT NULL COMMENT '预约时间',
-  `status` varchar(10) NOT NULL COMMENT '状态',
-  `deal_man` varchar(50) DEFAULT NULL COMMENT '处理人',
-  `remark` varchar(255) DEFAULT NULL COMMENT '备注',
-  `cp_id` bigint(20) DEFAULT NULL,
-  `belong_id` bigint(20) DEFAULT NULL COMMENT '所属用户id',
-  PRIMARY KEY (`id`)
+                                 `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                 `client_id` bigint(20) DEFAULT NULL COMMENT '客户id',
+                                 `client_name` varchar(50) DEFAULT NULL COMMENT '客户名称',
+                                 `phone` varchar(50) DEFAULT NULL COMMENT '联系电话',
+                                 `pre_time` datetime DEFAULT NULL COMMENT '预约时间',
+                                 `status` varchar(10) NOT NULL COMMENT '状态',
+                                 `deal_man` varchar(50) DEFAULT NULL COMMENT '处理人',
+                                 `remark` varchar(255) DEFAULT NULL COMMENT '备注',
+                                 `cp_id` bigint(20) DEFAULT NULL,
+                                 `belong_id` bigint(20) DEFAULT NULL COMMENT '所属用户id',
+                                 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='预约客户';
 
 /*Data for the table `tx_client_pre` */
@@ -3267,18 +3270,18 @@ CREATE TABLE `tx_client_pre` (
 /*Table structure for table `tx_community` */
 
 CREATE TABLE `tx_community` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `region_code` varchar(10) NOT NULL COMMENT '小区行政编码',
-  `name` varchar(50) NOT NULL COMMENT '小区名称',
-  `lgt` float DEFAULT NULL COMMENT '经度',
-  `lat` float DEFAULT NULL COMMENT '维度',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                                `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                `region_code` varchar(10) NOT NULL COMMENT '小区行政编码',
+                                `name` varchar(50) NOT NULL COMMENT '小区名称',
+                                `lgt` float DEFAULT NULL COMMENT '经度',
+                                `lat` float DEFAULT NULL COMMENT '维度',
+                                `cp_id` bigint(20) DEFAULT NULL,
+                                PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='小区维护';
 
 /*Data for the table `tx_community` */
 
-insert  into `tx_community`(`id`,`region_code`,`name`,`lgt`,`lat`,`cp_id`) values 
+insert  into `tx_community`(`id`,`region_code`,`name`,`lgt`,`lat`,`cp_id`) values
 (1,'320100','凤凰熙岸',119.997,31.7555,1),
 (2,'320200','蔚蓝天地',116.328,39.9008,1),
 (3,'310200','绿卡小镇',116.328,39.9008,1),
@@ -3287,35 +3290,35 @@ insert  into `tx_community`(`id`,`region_code`,`name`,`lgt`,`lat`,`cp_id`) value
 /*Table structure for table `tx_complaint` */
 
 CREATE TABLE `tx_complaint` (
-  `id` bigint(20) NOT NULL COMMENT 'id',
-  `client_id` bigint(20) NOT NULL COMMENT '投诉客户',
-  `complaint_type` varchar(10) NOT NULL COMMENT '投诉类型',
-  `complaint_desc` varchar(200) DEFAULT NULL COMMENT '投诉描述',
-  `complaint_pic` longtext COMMENT '投诉照片json',
-  `status` varchar(20) DEFAULT NULL COMMENT '受理状态',
-  `opinion` varchar(200) DEFAULT NULL COMMENT '受理意见',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                                `id` bigint(20) NOT NULL COMMENT 'id',
+                                `client_id` bigint(20) NOT NULL COMMENT '投诉客户',
+                                `complaint_type` varchar(10) NOT NULL COMMENT '投诉类型',
+                                `complaint_desc` varchar(200) DEFAULT NULL COMMENT '投诉描述',
+                                `complaint_pic` longtext COMMENT '投诉照片json',
+                                `status` varchar(20) DEFAULT NULL COMMENT '受理状态',
+                                `opinion` varchar(200) DEFAULT NULL COMMENT '受理意见',
+                                `cp_id` bigint(20) DEFAULT NULL,
+                                PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='投诉管理';
 
 /*Data for the table `tx_complaint` */
 
-insert  into `tx_complaint`(`id`,`client_id`,`complaint_type`,`complaint_desc`,`complaint_pic`,`status`,`opinion`,`cp_id`) values 
+insert  into `tx_complaint`(`id`,`client_id`,`complaint_type`,`complaint_desc`,`complaint_pic`,`status`,`opinion`,`cp_id`) values
 (1,3,'69','asfdasdfasdfa',NULL,'1','可以适当处理以下',1);
 
 /*Table structure for table `tx_complaint_info` */
 
 CREATE TABLE `tx_complaint_info` (
-  `id` bigint(20) NOT NULL COMMENT 'id',
-  `complaint_id` bigint(20) NOT NULL COMMENT '投诉主表id',
-  `man_id` bigint(20) NOT NULL COMMENT '发言人',
-  `action` varchar(50) DEFAULT NULL COMMENT '动作行为',
-  `content` varchar(300) DEFAULT NULL COMMENT '内容',
-  `create_time` datetime NOT NULL COMMENT '时间',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_Reference_10tx` (`complaint_id`),
-  CONSTRAINT `FK_Reference_10tx` FOREIGN KEY (`complaint_id`) REFERENCES `tx_complaint` (`id`)
+                                     `id` bigint(20) NOT NULL COMMENT 'id',
+                                     `complaint_id` bigint(20) NOT NULL COMMENT '投诉主表id',
+                                     `man_id` bigint(20) NOT NULL COMMENT '发言人',
+                                     `action` varchar(50) DEFAULT NULL COMMENT '动作行为',
+                                     `content` varchar(300) DEFAULT NULL COMMENT '内容',
+                                     `create_time` datetime NOT NULL COMMENT '时间',
+                                     `cp_id` bigint(20) DEFAULT NULL,
+                                     PRIMARY KEY (`id`),
+                                     KEY `FK_Reference_10tx` (`complaint_id`),
+                                     CONSTRAINT `FK_Reference_10tx` FOREIGN KEY (`complaint_id`) REFERENCES `tx_complaint` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='投诉消息记录';
 
 /*Data for the table `tx_complaint_info` */
@@ -3323,16 +3326,16 @@ CREATE TABLE `tx_complaint_info` (
 /*Table structure for table `tx_construction_log` */
 
 CREATE TABLE `tx_construction_log` (
-  `id` bigint(20) NOT NULL COMMENT 'id',
-  `create_time` datetime NOT NULL COMMENT '发生时间',
-  `operate_man` bigint(20) NOT NULL COMMENT '操作人',
-  `linked_client` bigint(20) NOT NULL COMMENT '关联客户',
-  `status` int(11) NOT NULL COMMENT '施工状态',
-  `description` varchar(200) DEFAULT NULL COMMENT '描述',
-  `picture` longtext COMMENT '照片json',
-  `action` varchar(20) NOT NULL COMMENT '动作',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                                       `id` bigint(20) NOT NULL COMMENT 'id',
+                                       `create_time` datetime NOT NULL COMMENT '发生时间',
+                                       `operate_man` bigint(20) NOT NULL COMMENT '操作人',
+                                       `linked_client` bigint(20) NOT NULL COMMENT '关联客户',
+                                       `status` int(11) NOT NULL COMMENT '施工状态',
+                                       `description` varchar(200) DEFAULT NULL COMMENT '描述',
+                                       `picture` longtext COMMENT '照片json',
+                                       `action` varchar(20) NOT NULL COMMENT '动作',
+                                       `cp_id` bigint(20) DEFAULT NULL,
+                                       PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='施工日志';
 
 /*Data for the table `tx_construction_log` */
@@ -3340,34 +3343,34 @@ CREATE TABLE `tx_construction_log` (
 /*Table structure for table `tx_material` */
 
 CREATE TABLE `tx_material` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `type_id` bigint(20) NOT NULL COMMENT '分类id',
-  `name` varchar(50) NOT NULL COMMENT '名称',
-  `picture_json` longtext COMMENT '图片',
-  `brand` bigint(50) DEFAULT NULL COMMENT '品牌',
-  `model` varchar(100) DEFAULT NULL COMMENT '型号',
-  `room_area` bigint(10) DEFAULT NULL COMMENT '房间区域',
-  `origin` varchar(100) DEFAULT NULL COMMENT '产地',
-  `unit` varchar(32) DEFAULT NULL COMMENT '标准单位',
-  `price_purchase` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '采购价',
-  `price_salse` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '销售价',
-  `price_contract` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '承包价',
-  `super_code` varchar(20) DEFAULT NULL COMMENT '特项编码',
-  `other_code` varchar(20) DEFAULT NULL COMMENT '其他编码',
-  `purchase_unit` varchar(20) DEFAULT NULL COMMENT '采购转换单位',
-  `purchase_ceo` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '采购转换系数',
-  `salse_unit` varchar(20) DEFAULT NULL COMMENT '销售转换单位',
-  `salse_ceo` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '销售转换系数',
-  `if_on` tinyint(1) NOT NULL COMMENT '是否启用',
-  `remark` varchar(300) DEFAULT NULL COMMENT '备注',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_Reference_7tx` (`type_id`)
+                               `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                               `type_id` bigint(20) NOT NULL COMMENT '分类id',
+                               `name` varchar(50) NOT NULL COMMENT '名称',
+                               `picture_json` longtext COMMENT '图片',
+                               `brand` bigint(50) DEFAULT NULL COMMENT '品牌',
+                               `model` varchar(100) DEFAULT NULL COMMENT '型号',
+                               `room_area` bigint(10) DEFAULT NULL COMMENT '房间区域',
+                               `origin` varchar(100) DEFAULT NULL COMMENT '产地',
+                               `unit` varchar(32) DEFAULT NULL COMMENT '标准单位',
+                               `price_purchase` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '采购价',
+                               `price_salse` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '销售价',
+                               `price_contract` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '承包价',
+                               `super_code` varchar(20) DEFAULT NULL COMMENT '特项编码',
+                               `other_code` varchar(20) DEFAULT NULL COMMENT '其他编码',
+                               `purchase_unit` varchar(20) DEFAULT NULL COMMENT '采购转换单位',
+                               `purchase_ceo` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '采购转换系数',
+                               `salse_unit` varchar(20) DEFAULT NULL COMMENT '销售转换单位',
+                               `salse_ceo` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '销售转换系数',
+                               `if_on` tinyint(1) NOT NULL COMMENT '是否启用',
+                               `remark` varchar(300) DEFAULT NULL COMMENT '备注',
+                               `cp_id` bigint(20) DEFAULT NULL,
+                               PRIMARY KEY (`id`),
+                               KEY `FK_Reference_7tx` (`type_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='材料列表';
 
 /*Data for the table `tx_material` */
 
-insert  into `tx_material`(`id`,`type_id`,`name`,`picture_json`,`brand`,`model`,`room_area`,`origin`,`unit`,`price_purchase`,`price_salse`,`price_contract`,`super_code`,`other_code`,`purchase_unit`,`purchase_ceo`,`salse_unit`,`salse_ceo`,`if_on`,`remark`,`cp_id`) values 
+insert  into `tx_material`(`id`,`type_id`,`name`,`picture_json`,`brand`,`model`,`room_area`,`origin`,`unit`,`price_purchase`,`price_salse`,`price_contract`,`super_code`,`other_code`,`purchase_unit`,`purchase_ceo`,`salse_unit`,`salse_ceo`,`if_on`,`remark`,`cp_id`) values
 (3,10,'地砖 800x800地板砖墙砖全抛釉瓷砖釉面砖臻皇玉帝皇 臻皇玉白色',NULL,5,'800x800',22,'中国大陆','片',69.00,100.00,80.00,'10024650893',NULL,NULL,0.00,NULL,0.00,1,'10024650893',1),
 (4,10,'通体大理石瓷砖地砖800x800客厅地板砖磁砖',NULL,5,'800*800',18,'中国大陆','片',169.00,200.00,210.00,'28406256688',NULL,NULL,0.00,NULL,0.00,1,'每片可铺贴0.64㎡ 3片/箱 需整箱购买',1),
 (7,12,'ces22121',NULL,NULL,'22',20,'2','122',1.00,1.00,2.00,'ces',NULL,NULL,0.00,NULL,0.00,1,'1',1),
@@ -3383,17 +3386,17 @@ insert  into `tx_material`(`id`,`type_id`,`name`,`picture_json`,`brand`,`model`,
 /*Table structure for table `tx_material_type` */
 
 CREATE TABLE `tx_material_type` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `parent_id` bigint(20) DEFAULT NULL COMMENT '上级分类',
-  `type_name` varchar(20) NOT NULL COMMENT '分类名称',
-  `type_code` varchar(10) DEFAULT NULL COMMENT '分类编码',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                                    `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                    `parent_id` bigint(20) DEFAULT NULL COMMENT '上级分类',
+                                    `type_name` varchar(20) NOT NULL COMMENT '分类名称',
+                                    `type_code` varchar(10) DEFAULT NULL COMMENT '分类编码',
+                                    `cp_id` bigint(20) DEFAULT NULL,
+                                    PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COMMENT='材料分类';
 
 /*Data for the table `tx_material_type` */
 
-insert  into `tx_material_type`(`id`,`parent_id`,`type_name`,`type_code`,`cp_id`) values 
+insert  into `tx_material_type`(`id`,`parent_id`,`type_name`,`type_code`,`cp_id`) values
 (10,NULL,'瓷砖','0101',1),
 (11,NULL,'窗帘','02',1),
 (13,NULL,'开关','03',1),
@@ -3412,56 +3415,56 @@ insert  into `tx_material_type`(`id`,`parent_id`,`type_name`,`type_code`,`cp_id`
 /*Table structure for table `tx_plan_templat` */
 
 CREATE TABLE `tx_plan_templat` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `plan_type` bigint(20) NOT NULL COMMENT '计划类别',
-  `project_id` bigint(20) NOT NULL COMMENT '项目',
-  `offset_days` int(11) DEFAULT NULL COMMENT '偏移天数',
-  `duration_days` int(11) DEFAULT NULL COMMENT '历时天数',
-  `sort` int(11) DEFAULT NULL COMMENT '排序',
-  `remark` varchar(300) DEFAULT NULL COMMENT '备注',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_Reference_9tx` (`plan_type`)
+                                   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                   `plan_type` bigint(20) NOT NULL COMMENT '计划类别',
+                                   `project_id` bigint(20) NOT NULL COMMENT '项目',
+                                   `offset_days` int(11) DEFAULT NULL COMMENT '偏移天数',
+                                   `duration_days` int(11) DEFAULT NULL COMMENT '历时天数',
+                                   `sort` int(11) DEFAULT NULL COMMENT '排序',
+                                   `remark` varchar(300) DEFAULT NULL COMMENT '备注',
+                                   `cp_id` bigint(20) DEFAULT NULL,
+                                   PRIMARY KEY (`id`),
+                                   KEY `FK_Reference_9tx` (`plan_type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='施工计划模板';
 
 /*Data for the table `tx_plan_templat` */
 
-insert  into `tx_plan_templat`(`id`,`plan_type`,`project_id`,`offset_days`,`duration_days`,`sort`,`remark`,`cp_id`) values 
+insert  into `tx_plan_templat`(`id`,`plan_type`,`project_id`,`offset_days`,`duration_days`,`sort`,`remark`,`cp_id`) values
 (1,1,1,1,1,1,'测试模板',1),
 (2,2,12,1,1,1,'1',6);
 
 /*Table structure for table `tx_plan_type` */
 
 CREATE TABLE `tx_plan_type` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `name` varchar(50) NOT NULL COMMENT '名称',
-  `if_on` tinyint(1) NOT NULL COMMENT '启用',
-  `remark` varchar(300) DEFAULT NULL COMMENT '备注',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                                `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                `name` varchar(50) NOT NULL COMMENT '名称',
+                                `if_on` tinyint(1) NOT NULL COMMENT '启用',
+                                `remark` varchar(300) DEFAULT NULL COMMENT '备注',
+                                `cp_id` bigint(20) DEFAULT NULL,
+                                PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='施工计划类别';
 
 /*Data for the table `tx_plan_type` */
 
-insert  into `tx_plan_type`(`id`,`name`,`if_on`,`remark`,`cp_id`) values 
+insert  into `tx_plan_type`(`id`,`name`,`if_on`,`remark`,`cp_id`) values
 (1,'默认模板',0,'默认模板不能删除',1),
 (2,'1',1,'2',6);
 
 /*Table structure for table `tx_predict_material` */
 
 CREATE TABLE `tx_predict_material` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `material_id` bigint(20) NOT NULL,
-  `room_id` bigint(20) NOT NULL,
-  `amount` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '数量',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_Reference_18` (`room_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COMMENT='空间主材预算';
+                                       `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                       `material_id` bigint(20) NOT NULL,
+                                       `room_id` bigint(20) NOT NULL,
+                                       `amount` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '数量',
+                                       `cp_id` bigint(20) DEFAULT NULL,
+                                       PRIMARY KEY (`id`),
+                                       KEY `FK_Reference_18` (`room_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COMMENT='空间主材预算';
 
 /*Data for the table `tx_predict_material` */
 
-insert  into `tx_predict_material`(`id`,`material_id`,`room_id`,`amount`,`cp_id`) values 
+insert  into `tx_predict_material`(`id`,`material_id`,`room_id`,`amount`,`cp_id`) values
 (1,2,1,0.00,1),
 (2,2,10,0.00,1),
 (3,15,29,0.00,6),
@@ -3478,28 +3481,30 @@ insert  into `tx_predict_material`(`id`,`material_id`,`room_id`,`amount`,`cp_id`
 (14,15,29,0.00,6),
 (15,15,29,0.00,6),
 (16,15,29,0.00,6),
-(22,16,5,1.00,6);
+(22,16,5,1.00,6),
+(23,3,1,2.00,1),
+(24,9,1,3.00,1);
 
 /*Table structure for table `tx_predict_project` */
 
 CREATE TABLE `tx_predict_project` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `room_id` bigint(20) NOT NULL,
-  `project_id` bigint(20) DEFAULT NULL,
-  `name` varchar(50) NOT NULL COMMENT '项目名称',
-  `work_type` bigint(10) DEFAULT NULL COMMENT '工种',
-  `unit` varchar(5) DEFAULT NULL COMMENT '单位',
-  `cp_id` bigint(20) DEFAULT NULL,
-  `amount` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '报价数量',
-  PRIMARY KEY (`id`),
-  KEY `FK_Reference_17` (`room_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COMMENT='空间工程预算';
+                                      `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                      `room_id` bigint(20) NOT NULL,
+                                      `project_id` bigint(20) DEFAULT NULL,
+                                      `name` varchar(50) NOT NULL COMMENT '项目名称',
+                                      `work_type` bigint(10) DEFAULT NULL COMMENT '工种',
+                                      `unit` varchar(5) DEFAULT NULL COMMENT '单位',
+                                      `cp_id` bigint(20) DEFAULT NULL,
+                                      `amount` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '报价数量',
+                                      PRIMARY KEY (`id`),
+                                      KEY `FK_Reference_17` (`room_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COMMENT='空间工程预算';
 
 /*Data for the table `tx_predict_project` */
 
-insert  into `tx_predict_project`(`id`,`room_id`,`project_id`,`name`,`work_type`,`unit`,`cp_id`,`amount`) values 
+insert  into `tx_predict_project`(`id`,`room_id`,`project_id`,`name`,`work_type`,`unit`,`cp_id`,`amount`) values
 (1,1,1,'嵌入式',170,'m2',1,0.00),
-(2,1,2,'木制踢脚线粘贴',170,'m',1,0.00),
+(2,1,2,'木制踢脚线粘贴',170,'m',1,1.00),
 (3,2,3,'瓷砖门槛石铺设',171,'m2',1,0.00),
 (4,1,1,'嵌入式',170,'m2',1,0.00),
 (16,5,12,'铺设电路',183,'m',6,100.00),
@@ -3515,22 +3520,25 @@ insert  into `tx_predict_project`(`id`,`room_id`,`project_id`,`name`,`work_type`
 (28,5,24,'6',186,'66',6,0.00),
 (29,5,25,'7',186,'777',6,0.00),
 (30,5,26,'8',186,'88',6,0.00),
-(31,6,12,'铺设电路',183,'m',6,0.00);
+(31,6,12,'铺设电路',183,'m',6,0.00),
+(33,1,8,'铺设地砖',171,'平方米',1,0.00),
+(34,1,9,'铺设墙砖',171,'平方米',1,0.00),
+(35,2,7,'铺设水管',170,'米',1,2.00);
 
 /*Table structure for table `tx_predict_room` */
 
 CREATE TABLE `tx_predict_room` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `template_id` bigint(20) NOT NULL,
-  `name` varchar(256) DEFAULT NULL,
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_Reference_16` (`template_id`)
+                                   `id` bigint(20) NOT NULL AUTO_INCREMENT,
+                                   `template_id` bigint(20) NOT NULL,
+                                   `name` varchar(256) DEFAULT NULL,
+                                   `cp_id` bigint(20) DEFAULT NULL,
+                                   PRIMARY KEY (`id`),
+                                   KEY `FK_Reference_16` (`template_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COMMENT='模板空间';
 
 /*Data for the table `tx_predict_room` */
 
-insert  into `tx_predict_room`(`id`,`template_id`,`name`,`cp_id`) values 
+insert  into `tx_predict_room`(`id`,`template_id`,`name`,`cp_id`) values
 (1,1,'卧室',1),
 (2,1,'厨房',1),
 (3,1,'客厅',1),
@@ -3543,19 +3551,19 @@ insert  into `tx_predict_room`(`id`,`template_id`,`name`,`cp_id`) values
 /*Table structure for table `tx_predict_template` */
 
 CREATE TABLE `tx_predict_template` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `name` varchar(256) NOT NULL COMMENT '报价表名称',
-  `template_type` bigint(20) NOT NULL COMMENT '报价表类型',
-  `cp_id` bigint(20) DEFAULT NULL,
-  `client_id` bigint(20) DEFAULT NULL COMMENT '客户id',
-  `belong_id` bigint(20) DEFAULT NULL COMMENT '所属用户',
-  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-  PRIMARY KEY (`id`)
+                                       `id` bigint(20) NOT NULL AUTO_INCREMENT,
+                                       `name` varchar(256) NOT NULL COMMENT '报价表名称',
+                                       `template_type` bigint(20) NOT NULL COMMENT '报价表类型',
+                                       `cp_id` bigint(20) DEFAULT NULL,
+                                       `client_id` bigint(20) DEFAULT NULL COMMENT '客户id',
+                                       `belong_id` bigint(20) DEFAULT NULL COMMENT '所属用户',
+                                       `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+                                       PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='预算模板';
 
 /*Data for the table `tx_predict_template` */
 
-insert  into `tx_predict_template`(`id`,`name`,`template_type`,`cp_id`,`client_id`,`belong_id`,`create_time`) values 
+insert  into `tx_predict_template`(`id`,`name`,`template_type`,`cp_id`,`client_id`,`belong_id`,`create_time`) values
 (1,'998套餐',180,1,NULL,NULL,NULL),
 (2,'豪华套餐',181,1,NULL,NULL,NULL),
 (9,'示例报价表模板',184,6,NULL,NULL,NULL),
@@ -3566,43 +3574,43 @@ insert  into `tx_predict_template`(`id`,`name`,`template_type`,`cp_id`,`client_i
 /*Table structure for table `tx_presale` */
 
 CREATE TABLE `tx_presale` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `name` varchar(50) NOT NULL COMMENT '阶段名称',
-  `status` int(11) NOT NULL COMMENT '阶段状态',
-  `percentage` decimal(10,0) DEFAULT NULL COMMENT '成单率',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                              `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                              `name` varchar(50) NOT NULL COMMENT '阶段名称',
+                              `status` int(11) NOT NULL COMMENT '阶段状态',
+                              `percentage` decimal(10,0) DEFAULT NULL COMMENT '成单率',
+                              `cp_id` bigint(20) DEFAULT NULL,
+                              PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='售前阶段';
 
 /*Data for the table `tx_presale` */
 
-insert  into `tx_presale`(`id`,`name`,`status`,`percentage`,`cp_id`) values 
+insert  into `tx_presale`(`id`,`name`,`status`,`percentage`,`cp_id`) values
 (1,'沟通',1,100,1);
 
 /*Table structure for table `tx_project` */
 
 CREATE TABLE `tx_project` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `type_id` bigint(20) NOT NULL COMMENT '分类id',
-  `name` varchar(50) NOT NULL COMMENT '项目名称',
-  `work_type` int(10) DEFAULT NULL COMMENT '工种',
-  `unit` varchar(5) DEFAULT NULL COMMENT '单位',
-  `total_price` decimal(10,2) NOT NULL COMMENT '综合价',
-  `super_code` varchar(10) DEFAULT NULL COMMENT '特项编码',
-  `total_cost` decimal(10,2) NOT NULL COMMENT '综合成本',
-  `human_cost` decimal(10,2) NOT NULL COMMENT '人工成本',
-  `help_cost` decimal(10,2) NOT NULL COMMENT '辅材成本',
-  `if_on` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否启用',
-  `if_editble` tinyint(1) DEFAULT NULL COMMENT '能否改价',
-  `cp_id` bigint(20) DEFAULT NULL,
-  `remark` varchar(1024) DEFAULT NULL COMMENT '备注',
-  PRIMARY KEY (`id`),
-  KEY `FK_Reference_6tx` (`type_id`)
+                              `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                              `type_id` bigint(20) NOT NULL COMMENT '分类id',
+                              `name` varchar(50) NOT NULL COMMENT '项目名称',
+                              `work_type` int(10) DEFAULT NULL COMMENT '工种',
+                              `unit` varchar(5) DEFAULT NULL COMMENT '单位',
+                              `total_price` decimal(10,2) NOT NULL COMMENT '综合价',
+                              `super_code` varchar(10) DEFAULT NULL COMMENT '特项编码',
+                              `total_cost` decimal(10,2) NOT NULL COMMENT '综合成本',
+                              `human_cost` decimal(10,2) NOT NULL COMMENT '人工成本',
+                              `help_cost` decimal(10,2) NOT NULL COMMENT '辅材成本',
+                              `if_on` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否启用',
+                              `if_editble` tinyint(1) DEFAULT NULL COMMENT '能否改价',
+                              `cp_id` bigint(20) DEFAULT NULL,
+                              `remark` varchar(1024) DEFAULT NULL COMMENT '备注',
+                              PRIMARY KEY (`id`),
+                              KEY `FK_Reference_6tx` (`type_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='工程列表';
 
 /*Data for the table `tx_project` */
 
-insert  into `tx_project`(`id`,`type_id`,`name`,`work_type`,`unit`,`total_price`,`super_code`,`total_cost`,`human_cost`,`help_cost`,`if_on`,`if_editble`,`cp_id`,`remark`) values 
+insert  into `tx_project`(`id`,`type_id`,`name`,`work_type`,`unit`,`total_price`,`super_code`,`total_cost`,`human_cost`,`help_cost`,`if_on`,`if_editble`,`cp_id`,`remark`) values
 (2,1,'木制踢脚线粘贴',172,'m',100.00,'H22321',80.00,60.00,20.00,1,1,1,NULL),
 (5,10,'ces',170,'1',22.00,'',22.00,22.00,11.00,1,1,1,NULL),
 (6,12,'铺设电线',170,'米',10.00,'',10.00,100.00,20.00,1,1,1,NULL),
@@ -3615,16 +3623,16 @@ insert  into `tx_project`(`id`,`type_id`,`name`,`work_type`,`unit`,`total_price`
 /*Table structure for table `tx_project_type` */
 
 CREATE TABLE `tx_project_type` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `parent_id` bigint(20) DEFAULT NULL COMMENT '上级分类',
-  `name` varchar(50) NOT NULL COMMENT '分类名称',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                                   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                   `parent_id` bigint(20) DEFAULT NULL COMMENT '上级分类',
+                                   `name` varchar(50) NOT NULL COMMENT '分类名称',
+                                   `cp_id` bigint(20) DEFAULT NULL,
+                                   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COMMENT='工程分类';
 
 /*Data for the table `tx_project_type` */
 
-insert  into `tx_project_type`(`id`,`parent_id`,`name`,`cp_id`) values 
+insert  into `tx_project_type`(`id`,`parent_id`,`name`,`cp_id`) values
 (12,NULL,'水电工',1),
 (13,NULL,'瓦工',1),
 (14,NULL,'木工',1),
@@ -3638,59 +3646,59 @@ insert  into `tx_project_type`(`id`,`parent_id`,`name`,`cp_id`) values
 /*Table structure for table `tx_receipt` */
 
 CREATE TABLE `tx_receipt` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `receipt_type` varchar(10) NOT NULL COMMENT '单据类型',
-  `name` varchar(50) NOT NULL COMMENT '单据名称',
-  `if_on` tinyint(1) NOT NULL COMMENT '是否启用',
-  `logistics` varchar(300) DEFAULT NULL COMMENT '物流信息',
-  `status` int(11) DEFAULT NULL COMMENT '标记状态',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                              `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                              `receipt_type` varchar(10) NOT NULL COMMENT '单据类型',
+                              `name` varchar(50) NOT NULL COMMENT '单据名称',
+                              `if_on` tinyint(1) NOT NULL COMMENT '是否启用',
+                              `logistics` varchar(300) DEFAULT NULL COMMENT '物流信息',
+                              `status` int(11) DEFAULT NULL COMMENT '标记状态',
+                              `cp_id` bigint(20) DEFAULT NULL,
+                              PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='单据类型维护';
 
 /*Data for the table `tx_receipt` */
 
-insert  into `tx_receipt`(`id`,`receipt_type`,`name`,`if_on`,`logistics`,`status`,`cp_id`) values 
+insert  into `tx_receipt`(`id`,`receipt_type`,`name`,`if_on`,`logistics`,`status`,`cp_id`) values
 (1,'1','测试',1,'单号22222',0,1);
 
 /*Table structure for table `tx_repair` */
 
 CREATE TABLE `tx_repair` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `client_id` bigint(20) NOT NULL COMMENT '报修客户',
-  `repair_type` varchar(10) NOT NULL COMMENT '保修类型',
-  `repair_desc` varchar(200) DEFAULT NULL COMMENT '报修描述',
-  `repair_pic` longtext COMMENT '报修照片json',
-  `repair_man` varchar(20) DEFAULT NULL COMMENT '修理人',
-  `repair_phone` varchar(20) DEFAULT NULL COMMENT '修理人联系电话',
-  `distribute_desc` varchar(200) DEFAULT NULL COMMENT '分配描述',
-  `repair_source` varchar(10) DEFAULT NULL COMMENT '报修来源',
-  `amount` decimal(10,0) DEFAULT NULL COMMENT '核价',
-  `status` int(11) DEFAULT NULL COMMENT '状态',
-  `feedback_time` datetime DEFAULT NULL COMMENT '反馈时间',
-  `launch_time` datetime NOT NULL COMMENT '发起时间',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                             `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                             `client_id` bigint(20) NOT NULL COMMENT '报修客户',
+                             `repair_type` varchar(10) NOT NULL COMMENT '保修类型',
+                             `repair_desc` varchar(200) DEFAULT NULL COMMENT '报修描述',
+                             `repair_pic` longtext COMMENT '报修照片json',
+                             `repair_man` varchar(20) DEFAULT NULL COMMENT '修理人',
+                             `repair_phone` varchar(20) DEFAULT NULL COMMENT '修理人联系电话',
+                             `distribute_desc` varchar(200) DEFAULT NULL COMMENT '分配描述',
+                             `repair_source` varchar(10) DEFAULT NULL COMMENT '报修来源',
+                             `amount` decimal(10,0) DEFAULT NULL COMMENT '核价',
+                             `status` int(11) DEFAULT NULL COMMENT '状态',
+                             `feedback_time` datetime DEFAULT NULL COMMENT '反馈时间',
+                             `launch_time` datetime NOT NULL COMMENT '发起时间',
+                             `cp_id` bigint(20) DEFAULT NULL,
+                             PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='报修管理';
 
 /*Data for the table `tx_repair` */
 
-insert  into `tx_repair`(`id`,`client_id`,`repair_type`,`repair_desc`,`repair_pic`,`repair_man`,`repair_phone`,`distribute_desc`,`repair_source`,`amount`,`status`,`feedback_time`,`launch_time`,`cp_id`) values 
+insert  into `tx_repair`(`id`,`client_id`,`repair_type`,`repair_desc`,`repair_pic`,`repair_man`,`repair_phone`,`distribute_desc`,`repair_source`,`amount`,`status`,`feedback_time`,`launch_time`,`cp_id`) values
 (1,3,'152',NULL,'[]','张三','18912322213','无',NULL,120,0,'2019-02-18 17:37:23','2019-02-18 17:37:25',1),
 (2,4,'152','测试','[{\"status\":\"success\",\"name\":\"标准制修订.png\",\"size\":39812,\"percentage\":100,\"uid\":1550483271588,\"raw\":{\"uid\":1550483271588},\"url\":\"blob:http://localhost:8001/276473fd-ca61-45c2-a5f5-fc01243aff96\",\"response\":{\"msg\":\"success\",\"code\":0,\"url\":\"https://ttn-decoration.oss-cn-beijing.aliyuncs.com/20190218/4dbf6846412c4ab79c909dd4e2882eb7.png\"}},{\"name\":\"标准信息服务.png\",\"url\":\"https://ttn-decoration.oss-cn-beijing.aliyuncs.com/20190218/e014f759a5af4663b940eb84517dd967.png\",\"uid\":1550484225341,\"status\":\"success\"}]','测试','8','123',NULL,123,0,'2019-02-18 17:41:15','2019-02-18 17:41:17',1);
 
 /*Table structure for table `tx_repair_info` */
 
 CREATE TABLE `tx_repair_info` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `repair_id` bigint(20) NOT NULL COMMENT '报修主表',
-  `man_id` bigint(20) NOT NULL COMMENT '发言人',
-  `action` varchar(50) DEFAULT NULL COMMENT '动作行为',
-  `content` varchar(200) DEFAULT NULL COMMENT '内容',
-  `create_time` datetime NOT NULL COMMENT '时间',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_Reference_11tx` (`repair_id`)
+                                  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                  `repair_id` bigint(20) NOT NULL COMMENT '报修主表',
+                                  `man_id` bigint(20) NOT NULL COMMENT '发言人',
+                                  `action` varchar(50) DEFAULT NULL COMMENT '动作行为',
+                                  `content` varchar(200) DEFAULT NULL COMMENT '内容',
+                                  `create_time` datetime NOT NULL COMMENT '时间',
+                                  `cp_id` bigint(20) DEFAULT NULL,
+                                  PRIMARY KEY (`id`),
+                                  KEY `FK_Reference_11tx` (`repair_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='报修管理消息记录';
 
 /*Data for the table `tx_repair_info` */
@@ -3698,17 +3706,17 @@ CREATE TABLE `tx_repair_info` (
 /*Table structure for table `tx_serving_tech` */
 
 CREATE TABLE `tx_serving_tech` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `type_name` varchar(50) NOT NULL COMMENT '类别名称',
-  `content` varchar(1024) NOT NULL COMMENT '内容',
-  `name` varchar(20) NOT NULL COMMENT '名称',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                                   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                   `type_name` varchar(50) NOT NULL COMMENT '类别名称',
+                                   `content` varchar(1024) NOT NULL COMMENT '内容',
+                                   `name` varchar(20) NOT NULL COMMENT '名称',
+                                   `cp_id` bigint(20) DEFAULT NULL,
+                                   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='客户服务术语';
 
 /*Data for the table `tx_serving_tech` */
 
-insert  into `tx_serving_tech`(`id`,`type_name`,`content`,`name`,`cp_id`) values 
+insert  into `tx_serving_tech`(`id`,`type_name`,`content`,`name`,`cp_id`) values
 (1,'问候语','啊手动阀发射点发','问候语1',NULL),
 (2,'问候语','阿斯顿发生发射点发色发射点发生放手发动署方式','测试1',NULL),
 (3,'问候语','啊手动阀发射点发','问候语1',7),
@@ -3721,78 +3729,78 @@ insert  into `tx_serving_tech`(`id`,`type_name`,`content`,`name`,`cp_id`) values
 /*Table structure for table `tx_store` */
 
 CREATE TABLE `tx_store` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `name` varchar(50) NOT NULL COMMENT '名称',
-  `address` varchar(100) DEFAULT NULL COMMENT '地址',
-  `emp_name` varchar(20) DEFAULT NULL COMMENT '管理员名字',
-  `phone` varchar(20) DEFAULT NULL COMMENT '电话',
-  `remark` varchar(300) DEFAULT NULL COMMENT '备注',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                            `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                            `name` varchar(50) NOT NULL COMMENT '名称',
+                            `address` varchar(100) DEFAULT NULL COMMENT '地址',
+                            `emp_name` varchar(20) DEFAULT NULL COMMENT '管理员名字',
+                            `phone` varchar(20) DEFAULT NULL COMMENT '电话',
+                            `remark` varchar(300) DEFAULT NULL COMMENT '备注',
+                            `cp_id` bigint(20) DEFAULT NULL,
+                            PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='仓库管理';
 
 /*Data for the table `tx_store` */
 
-insert  into `tx_store`(`id`,`name`,`address`,`emp_name`,`phone`,`remark`,`cp_id`) values 
+insert  into `tx_store`(`id`,`name`,`address`,`emp_name`,`phone`,`remark`,`cp_id`) values
 (1,'中心仓库1','中吴大道1095','陈xx','18288882928','作为主要的大仓库',1);
 
 /*Table structure for table `tx_supplier` */
 
 CREATE TABLE `tx_supplier` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `name` varchar(50) NOT NULL COMMENT '名称',
-  `address` varchar(200) DEFAULT NULL COMMENT '地址',
-  `man_name` varchar(20) DEFAULT NULL COMMENT '联系人',
-  `bank_account` varchar(50) DEFAULT NULL COMMENT '银行账户',
-  `bank_name` varchar(50) DEFAULT NULL COMMENT '银行',
-  `remark` varchar(300) DEFAULT NULL COMMENT '备注',
-  `phone` varchar(255) DEFAULT NULL COMMENT '联系人电话',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                               `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                               `name` varchar(50) NOT NULL COMMENT '名称',
+                               `address` varchar(200) DEFAULT NULL COMMENT '地址',
+                               `man_name` varchar(20) DEFAULT NULL COMMENT '联系人',
+                               `bank_account` varchar(50) DEFAULT NULL COMMENT '银行账户',
+                               `bank_name` varchar(50) DEFAULT NULL COMMENT '银行',
+                               `remark` varchar(300) DEFAULT NULL COMMENT '备注',
+                               `phone` varchar(255) DEFAULT NULL COMMENT '联系人电话',
+                               `cp_id` bigint(20) DEFAULT NULL,
+                               PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='供应商管理';
 
 /*Data for the table `tx_supplier` */
 
-insert  into `tx_supplier`(`id`,`name`,`address`,`man_name`,`bank_account`,`bank_name`,`remark`,`phone`,`cp_id`) values 
+insert  into `tx_supplier`(`id`,`name`,`address`,`man_name`,`bank_account`,`bank_name`,`remark`,`phone`,`cp_id`) values
 (1,'瓷砖供应商','中海','陈总','2312231231231231313123','招商','陈总是vip供应商','13123123',1);
 
 /*Table structure for table `tx_target` */
 
 CREATE TABLE `tx_target` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `dept_id` bigint(20) NOT NULL COMMENT '部门',
-  `year` varchar(4) NOT NULL COMMENT '目标年份',
-  `contract1` decimal(10,2) DEFAULT NULL COMMENT '1月合同目标',
-  `contract2` decimal(10,2) DEFAULT NULL COMMENT '2月合同目标',
-  `contract3` decimal(10,2) DEFAULT NULL COMMENT '3月合同目标',
-  `contract4` decimal(10,2) DEFAULT NULL COMMENT '4月合同目标',
-  `contract5` decimal(10,2) DEFAULT NULL COMMENT '5月合同目标',
-  `contract6` decimal(10,2) DEFAULT NULL COMMENT '6月合同目标',
-  `contract7` decimal(10,2) DEFAULT NULL COMMENT '7月合同目标',
-  `contract8` decimal(10,2) DEFAULT NULL COMMENT '8月合同目标',
-  `contract9` decimal(10,2) DEFAULT NULL COMMENT '9月合同目标',
-  `contract10` decimal(10,2) DEFAULT NULL COMMENT '10月合同目标',
-  `contract11` decimal(10,2) DEFAULT NULL COMMENT '11月合同目标',
-  `contract12` decimal(10,2) DEFAULT NULL COMMENT '12月合同目标',
-  `goal1` decimal(10,2) DEFAULT NULL COMMENT '1月收款目标',
-  `goal2` decimal(10,2) DEFAULT NULL COMMENT '2月收款目标',
-  `goal3` decimal(10,2) DEFAULT NULL COMMENT '3月收款目标',
-  `goal4` decimal(10,2) DEFAULT NULL COMMENT '4月收款目标',
-  `goal5` decimal(10,2) DEFAULT NULL COMMENT '5月收款目标',
-  `goal6` decimal(10,2) DEFAULT NULL COMMENT '6月收款目标',
-  `goal7` decimal(10,2) DEFAULT NULL COMMENT '7月收款目标',
-  `goal8` decimal(10,2) DEFAULT NULL COMMENT '8月收款目标',
-  `goal9` decimal(10,2) DEFAULT NULL COMMENT '9月收款目标',
-  `goal10` decimal(10,2) DEFAULT NULL COMMENT '10月收款目标',
-  `goal11` decimal(10,2) DEFAULT NULL COMMENT '11月收款目标',
-  `goal12` decimal(10,2) DEFAULT NULL COMMENT '12月收款目标',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                             `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                             `dept_id` bigint(20) NOT NULL COMMENT '部门',
+                             `year` varchar(4) NOT NULL COMMENT '目标年份',
+                             `contract1` decimal(10,2) DEFAULT NULL COMMENT '1月合同目标',
+                             `contract2` decimal(10,2) DEFAULT NULL COMMENT '2月合同目标',
+                             `contract3` decimal(10,2) DEFAULT NULL COMMENT '3月合同目标',
+                             `contract4` decimal(10,2) DEFAULT NULL COMMENT '4月合同目标',
+                             `contract5` decimal(10,2) DEFAULT NULL COMMENT '5月合同目标',
+                             `contract6` decimal(10,2) DEFAULT NULL COMMENT '6月合同目标',
+                             `contract7` decimal(10,2) DEFAULT NULL COMMENT '7月合同目标',
+                             `contract8` decimal(10,2) DEFAULT NULL COMMENT '8月合同目标',
+                             `contract9` decimal(10,2) DEFAULT NULL COMMENT '9月合同目标',
+                             `contract10` decimal(10,2) DEFAULT NULL COMMENT '10月合同目标',
+                             `contract11` decimal(10,2) DEFAULT NULL COMMENT '11月合同目标',
+                             `contract12` decimal(10,2) DEFAULT NULL COMMENT '12月合同目标',
+                             `goal1` decimal(10,2) DEFAULT NULL COMMENT '1月收款目标',
+                             `goal2` decimal(10,2) DEFAULT NULL COMMENT '2月收款目标',
+                             `goal3` decimal(10,2) DEFAULT NULL COMMENT '3月收款目标',
+                             `goal4` decimal(10,2) DEFAULT NULL COMMENT '4月收款目标',
+                             `goal5` decimal(10,2) DEFAULT NULL COMMENT '5月收款目标',
+                             `goal6` decimal(10,2) DEFAULT NULL COMMENT '6月收款目标',
+                             `goal7` decimal(10,2) DEFAULT NULL COMMENT '7月收款目标',
+                             `goal8` decimal(10,2) DEFAULT NULL COMMENT '8月收款目标',
+                             `goal9` decimal(10,2) DEFAULT NULL COMMENT '9月收款目标',
+                             `goal10` decimal(10,2) DEFAULT NULL COMMENT '10月收款目标',
+                             `goal11` decimal(10,2) DEFAULT NULL COMMENT '11月收款目标',
+                             `goal12` decimal(10,2) DEFAULT NULL COMMENT '12月收款目标',
+                             `cp_id` bigint(20) DEFAULT NULL,
+                             PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COMMENT='业绩目标';
 
 /*Data for the table `tx_target` */
 
-insert  into `tx_target`(`id`,`dept_id`,`year`,`contract1`,`contract2`,`contract3`,`contract4`,`contract5`,`contract6`,`contract7`,`contract8`,`contract9`,`contract10`,`contract11`,`contract12`,`goal1`,`goal2`,`goal3`,`goal4`,`goal5`,`goal6`,`goal7`,`goal8`,`goal9`,`goal10`,`goal11`,`goal12`,`cp_id`) values 
+insert  into `tx_target`(`id`,`dept_id`,`year`,`contract1`,`contract2`,`contract3`,`contract4`,`contract5`,`contract6`,`contract7`,`contract8`,`contract9`,`contract10`,`contract11`,`contract12`,`goal1`,`goal2`,`goal3`,`goal4`,`goal5`,`goal6`,`goal7`,`goal8`,`goal9`,`goal10`,`goal11`,`goal12`,`cp_id`) values
 (1,2,'2018',120000.00,110000.00,120000.00,120000.00,120000.00,110000.00,110000.00,100000.00,90000.00,140000.00,160000.00,110000.00,222200.00,110000.00,130000.00,150000.00,160000.00,120000.00,110000.00,110000.00,130000.00,130000.00,130000.00,130000.00,1),
 (2,5,'2018',110000.00,110000.00,110000.00,110000.00,110000.00,110000.00,110000.00,110000.00,110000.00,110000.00,110000.00,110000.00,110000.00,110000.00,110000.00,110000.00,110000.00,110000.00,110000.00,110000.00,110000.00,110000.00,110000.00,110000.00,1),
 (7,6,'2019',0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,1),
@@ -3814,19 +3822,19 @@ insert  into `tx_target`(`id`,`dept_id`,`year`,`contract1`,`contract2`,`contract
 /*Table structure for table `tx_task` */
 
 CREATE TABLE `tx_task` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `launch_man` varchar(255) NOT NULL COMMENT '发起人',
-  `content` text COMMENT '内容',
-  `status` int(11) DEFAULT NULL COMMENT '状态',
-  `importance` varchar(10) DEFAULT NULL COMMENT '重要性',
-  `principal` varchar(255) NOT NULL COMMENT '负责人',
-  `cp_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                           `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+                           `launch_man` varchar(255) NOT NULL COMMENT '发起人',
+                           `content` text COMMENT '内容',
+                           `status` int(11) DEFAULT NULL COMMENT '状态',
+                           `importance` varchar(10) DEFAULT NULL COMMENT '重要性',
+                           `principal` varchar(255) NOT NULL COMMENT '负责人',
+                           `cp_id` bigint(20) DEFAULT NULL,
+                           PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='任务';
 
 /*Data for the table `tx_task` */
 
-insert  into `tx_task`(`id`,`launch_man`,`content`,`status`,`importance`,`principal`,`cp_id`) values 
+insert  into `tx_task`(`id`,`launch_man`,`content`,`status`,`importance`,`principal`,`cp_id`) values
 (1,'测试','测试省',0,'一般','测试',1);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

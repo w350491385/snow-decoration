@@ -78,23 +78,25 @@
  - 前端代码：dc-web
  - 本项目是前后端分离的，还需要部署前端，才能运行起来
  - 前端部署完毕，就可以访问项目了
- - 客户账号：wh，密码：admin
+ - 客户账号：18988888888，密码：admin
  - 超管账号：czczj，密码：admin
 
  <br>
 
 ###### 项目截图：
 
-客户侧-子账号管理
+###### 子账号管理
 
-![子账号管理](document/resource/子账号管理.jpg)
+![子账号管理](https://ttn-decoration.oss-cn-beijing.aliyuncs.com/%E5%AD%90%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86.jpg)
 
-![材料管理](document/resource/材料管理.jpg)
+###### 智能报价
+![智能报价](https://ttn-decoration.oss-cn-beijing.aliyuncs.com/%E6%99%BA%E8%83%BD%E6%8A%A5%E4%BB%B7.jpg)
 
-![施工项定额](document/resource/施工项定额.jpg)
+###### 客户管理
+![客户管理](https://ttn-decoration.oss-cn-beijing.aliyuncs.com/%E5%AE%A2%E6%88%B7%E7%AE%A1%E7%90%86.jpg)
 
-![客户管理](document/resource/客户管理.jpg)
+###### 功能菜单分配
+![功能菜单分配](https://ttn-decoration.oss-cn-beijing.aliyuncs.com/%E5%8A%9F%E8%83%BD%E8%8F%9C%E5%8D%95%E5%88%86%E9%85%8D.jpg)
 
-![品牌维护](document/resource/品牌维护.jpg)
-
-![业绩目标](document/resource/业绩目标.jpg)
+###### 业绩目标
+![业绩目标](https://ttn-decoration.oss-cn-beijing.aliyuncs.com/%E4%B8%9A%E7%BB%A9%E7%9B%AE%E6%A0%87.jpg)

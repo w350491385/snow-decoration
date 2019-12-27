@@ -71,6 +71,7 @@
 - 修改application-dev.yml，更新MySQL账号和密码
 - Eclipse、IDEA运行TtnApplication.java，则可启动项目
 - Swagger路径：http://localhost:8080/swagger/index.html
+- 打包命令：mvn clean package -Pprod -U
 
 <br> 
 

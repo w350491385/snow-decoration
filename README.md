@@ -89,12 +89,12 @@
 
 ![子账号管理](document/resource/子账号管理.jpg)
 
-![材料管理](document\resource\材料管理.jpg)
+![材料管理](document/resource/材料管理.jpg)
 
-![施工项定额](document\resource\施工项定额.jpg)
+![施工项定额](document/resource/施工项定额.jpg)
 
-![客户管理](document\resource\客户管理.jpg)
+![客户管理](document/resource/客户管理.jpg)
 
-![品牌维护](document\resource\品牌维护.jpg)
+![品牌维护](document/resource/品牌维护.jpg)
 
-![业绩目标](document\resource\业绩目标.jpg)
+![业绩目标](document/resource/业绩目标.jpg)

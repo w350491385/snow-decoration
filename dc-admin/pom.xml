@@ -37,7 +37,7 @@
 		<swagger.version>2.7.0</swagger.version>
 		<joda.time.version>2.9.9</joda.time.version>
 		<fastjson.version>1.2.47</fastjson.version>
-		<hutool.version>4.1.1</hutool.version>
+		<hutool.version>4.1.12</hutool.version>
 		<poi.version>3.8</poi.version>
 		<jxl.version>2.6.12</jxl.version>
 	</properties>
